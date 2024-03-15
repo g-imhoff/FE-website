@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="./css/main.css">
         <link rel="stylesheet" href="./css/header.css">
         <link rel="stylesheet" href="./css/font.css">
+        <script src="./js/burgerMenu.js"></script>
     </head>
 
     <body>  

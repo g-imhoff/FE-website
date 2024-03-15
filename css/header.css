@@ -1,38 +1,213 @@
-header {
-    width: 100%; 
-    height: 75px;
-    display : flex;
-    align-items: center;
-    justify-content: space-between;
+:root {
+    --sizeOfLink: 15vw;
+    --primaryBlueColor : #554aff;
+    --darkerPrimaryBlueColor : #3730ab;
+}
 
+header {
+    /*Header settings :*/ 
+    position: relative; 
+
+    width: 100%; 
+    height: 9vh;
+    display : flex;
+
+    font-family : "Roboto Regular";
+
+    /*Header image settings*/
     a {
+        width : var(--sizeOfLink);
+        height: auto;
+        display : flex; 
+        justify-content: center;
+        align-items: center;
+        color: white;
+
         img {
             height: 60px; 
             width: auto;
-
-            padding-left: 3vw;
         }
+        
     }
 
+    /*Header navigation bar settings*/
     nav {
-        padding-right: 10vw;
-
+        margin: auto;
+        width: auto; 
+        
         ul {
             display : flex; 
             justify-content: space-between;
             
-            li {
-                padding-left : 10vw; 
-                
+            li {                
                 list-style-type: none;
 
                 a {
-                    font-family : "Roboto Regular";
-
                     text-decoration: none;
                     color: white;
                 }
             }
+
+            li + li {
+                padding-left: 1vw;
+            }
         }
     }
+
+}
+
+.login-animation {
+    box-shadow: inset 0 0 0 0 var(--primaryBlueColor);
+    transition: color .5s ease-in-out, box-shadow .5s ease-in-out;
+}
+
+.login-animation:hover {
+    box-shadow: inset var(--sizeOfLink) 0 0 0 var(--primaryBlueColor);
+    color: white;
+}
+
+#burger-menu {
+    display : none; 
+}
+
+#sidebar {
+    display : none; 
+}
+
+/*Media queries*/
+@media screen and (max-width: 600px) {
+    :root {
+        --sizeOfLink: 20vw; 
+    }
+
+    header {
+        justify-content: space-between;
+        
+        a {
+            img {
+                height: 40px; 
+                width: auto;
+            }
+        }
+
+        nav {
+            display : none; 
+    
+            
+        }
+    
+        .login-animation {
+            display : none; 
+        }
+    }
+
+    /*Burger menu settings*/
+    #burger-menu {
+        width: var(--sizeOfLink);
+        height: auto;
+
+        display : flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+    }
+
+    #burger {
+        display : inline; 
+        width : 30px;
+        height: auto;
+        
+        span {
+            display : block;
+            width : 100%;
+            height: 3px;
+            background-color: white;
+            border-radius: 5px; 
+        }
+        
+        span + span {
+            margin-top: 7px;
+        }
+    }
+
+    #sidebar {
+        display : flex;
+        position : fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--primaryBlueColor);
+    }
+
+    #sidebar {
+        display : flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            width: 100vw;
+            height: 10vh; 
+
+            display : flex;
+            justify-content: center;
+            align-items: center;
+
+            box-shadow: inset 0 0 0 0 var(--primaryBlueColor);
+            transition: color 1s ease-in-out, box-shadow 1s ease-in-out;
+        }
+
+        li:hover {
+            box-shadow: inset 100vh 0 0 0 var(--darkerPrimaryBlueColor);
+            color: white;
+        }
+    }
+
+    #new-header {
+        position : absolute; 
+        top: 0;
+        right: 0;
+        width : 100vw;
+        height : 9vh;
+
+        display : flex;
+    }
+
+    #close-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position : absolute;
+        top: 0;
+        right: 0;
+        height : 9vh;
+        width : var(--sizeOfLink);
+
+    }
+
+    #close {
+        display : inline; 
+        width : 30px;
+        height: auto;
+        
+        span {
+            display : block;
+            width : 100%;
+            height: 3px;
+            background-color: white;
+            border-radius: 5px; 
+        }
+        
+        span + span {
+            margin-top: 7px;
+        }
+    }
+
 }

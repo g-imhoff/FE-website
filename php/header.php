@@ -14,20 +14,17 @@
 
 
     <div id="burger-menu"> 
-        <div id="burger"> 
+        <div id="burger" onclick=showSidebar()> 
                 <span></span>
                 <span></span>
                 <span></span>
         </div>
     </div>
-    
+    <!-- Sidebar -->
     <div id="sidebar"> 
         <div id = "new-header"> 
-            <div id="close-menu"> 
-                <div id="close"> 
-                        <span></span>
-                        <span></span>
-                </div>
+            <div id="close-menu" onclick=closeSidebar()> 
+                <img src="../assets/img/close.png" alt="close button">
             </div>
         </div>
 

@@ -2,6 +2,7 @@
     --sizeOfLink: 15vw;
     --primaryBlueColor : #554aff;
     --darkerPrimaryBlueColor : #3730ab;
+    --white : #f8f8f8;
 }
 
 header {
@@ -21,7 +22,7 @@ header {
         display : flex; 
         justify-content: center;
         align-items: center;
-        color: white;
+        color: var(--white);
 
         img {
             height: 60px; 
@@ -44,7 +45,7 @@ header {
 
                 a {
                     text-decoration: none;
-                    color: white;
+                    color: var(--white);
                 }
             }
 
@@ -63,7 +64,7 @@ header {
 
 .login-animation:hover {
     box-shadow: inset var(--sizeOfLink) 0 0 0 var(--primaryBlueColor);
-    color: white;
+    color: var(--white);
 }
 
 #burger-menu {
@@ -115,14 +116,14 @@ header {
 
     #burger {
         display : inline; 
-        width : 30px;
+        width : 35px;
         height: auto;
         
         span {
             display : block;
             width : 100%;
             height: 3px;
-            background-color: white;
+            background-color: var(--white);
             border-radius: 5px; 
         }
         
@@ -132,17 +133,17 @@ header {
     }
 
     #sidebar {
-        display : flex;
+        display : none;
+
         position : fixed;
         top: 0;
         left: 0;
+        
         width: 100%;
         height: 100vh;
-        background-color: var(--primaryBlueColor);
-    }
 
-    #sidebar {
-        display : flex;
+        background-color: var(--primaryBlueColor);
+
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -165,7 +166,7 @@ header {
 
         li:hover {
             box-shadow: inset 100vh 0 0 0 var(--darkerPrimaryBlueColor);
-            color: white;
+            color: var(--white);
         }
     }
 
@@ -190,24 +191,10 @@ header {
         height : 9vh;
         width : var(--sizeOfLink);
 
-    }
-
-    #close {
-        display : inline; 
-        width : 30px;
-        height: auto;
-        
-        span {
-            display : block;
-            width : 100%;
-            height: 3px;
-            background-color: white;
-            border-radius: 5px; 
-        }
-        
-        span + span {
-            margin-top: 7px;
+        img {
+            width: 35px;
+            height: auto;
+            cursor: pointer;
         }
     }
-
 }

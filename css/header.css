@@ -9,7 +9,7 @@ header {
     position: relative; 
 
     width: 100%; 
-    height: 9vh;
+    height: 110px;
     display : flex;
 
     font-family : var(--subTitleFont);
@@ -84,6 +84,7 @@ header {
 
     /*Settings for responsive*/
     header {
+        height: 90px;
         justify-content: space-between;
         
         a {

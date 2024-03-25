@@ -3,12 +3,12 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 800px;
     width: 100vw;
 
     
     .box {
-        height: 90%;
+        height: 700px;
         width: 90%;
         background-color: var(--primaryBlueColor);
         border-radius: 10px;
@@ -113,3 +113,24 @@ main {
 }
 
 
+@media screen and (max-width: 768px) {
+    main {
+        height: 600px;
+        .box {
+            height: 500px;
+            .title-container {
+                .title-box {
+                    h1 {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            .video-container {
+                .youtube-video {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}

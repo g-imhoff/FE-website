@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --sizeOfLink: 15vw;
+    --primaryBlueColor : #4a50ff;
+    --darkerPrimaryBlueColor : #3730ab;
+    --white : #f8f8f8;
+    --black : #121212;
+    --titleFont : "Poppins Medium";
+    --subTitleFont : "Poppins Regular";
+}
+
+body {
+    background-color: var(--black);
+}
+
+a {
+    text-decoration: none;
+}

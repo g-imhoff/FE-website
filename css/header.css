@@ -172,6 +172,10 @@ header {
             box-shadow: inset 100vh 0 0 0 var(--darkerPrimaryBlueColor);
             color: var(--white);
         }
+
+        a {
+            width: 100vw;
+        }
     }
 
     /*Second header settings*/

@@ -24,7 +24,7 @@
     </nav>
 
     <!-- Login -->
-    <a href="./login.php" class="login-animation"><p>Login</p></a>
+    <a href="./login.php" class="login-animation"><p>Change to English</p></a>
 
     <!-- Burger Menu -->
     <div id="burger-menu"> 
@@ -47,7 +47,7 @@
             <li><a href="./lesson.php"><p>Lesson</p></a></li>
             <li><a href="./about.php"><p>About</p></a></li>
             <li><a href="./contact.php"><p>Contact</p></a></li>
-            <li><a href="./login.php"><p>Login</p></a></li>
+            <li><a href="./login.php"><p>Change to English</p></a></li>
         </ul>
     </div>
 

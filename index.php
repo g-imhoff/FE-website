@@ -18,11 +18,11 @@
     </head>
 
     <?php
-        include "./php/header.php";
+        include_once "./php-include/header.php";
     ?>
 
     <?php
-        include './php/main.php'
+        include_once './php-include/main.php'
     ?>
 
 </html>

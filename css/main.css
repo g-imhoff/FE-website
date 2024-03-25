@@ -81,13 +81,32 @@ main {
                 width: 30px;
                 height: 30px;
                 transition: 2s ease-in-out;
+
+                display : flex; 
+                align-items: center;
+                justify-content: center;
+
+                p {
+                    opacity: 0;
+
+                    transition: 1s ease-in-out;
+                    transition-delay: 0s;
+                    font-family: var(--subTitleFont);
+                }
             }
 
             button:hover {
                 border-radius: 20px;
                 width: 80%;
 
-                transition: 2s ease-in-out;
+
+
+                p {
+                    opacity: 1;
+
+                    transition: opacity 2s ease-in-out;
+                    transition-delay: 1s;
+                }
             }
         }
     }

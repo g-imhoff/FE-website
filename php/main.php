@@ -38,7 +38,7 @@
             </div>
 
             <div class = "button-container">
-                <button></button>
+                <button><p>Commencer la leçon</p></button>
             </div>
         </div>
     </main>

@@ -6,14 +6,17 @@
 
 :root {
     --sizeOfLink: 15vw;
-    --primaryBlueColor : #4a50ff;
-    --darkerPrimaryBlueColor : #3730ab;
+    --whiterPrimaryBlueColor : #b3d0ff;
+    --primaryBlueColor : #6ba4ff;
+    --darkerPrimaryBlueColor : #1972ff;
     --white : #ffffff;
     --black : #121212;
+    --greyBlack :#303030; 
     --grey : #696969;
     --greyWhite : #A9A9A9;
     --titleFont : "Poppins Medium";
     --subTitleFont : "Poppins Regular";
+    --paraFont : "Poppins Light";
 }
 
 body {

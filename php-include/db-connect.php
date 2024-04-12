@@ -1,13 +1,18 @@
 <?php
 
-$dsn = "mysql:host=localhost;dbname=fe_website";
-$username = "root";
-$password = "";
+function connect() {
+    $dsn = "mysql:host=localhost;dbname=fe_website";
+    $username = "root";
+    $password = "";
 
-try {
-    $conn = mysqli_connect('localhost', 'root', '', 'fe_website');
-} catch (PDOexception $e) {
-    echo "Connection failed: " . $e->getMessage();
+    try {
+        $conn = mysqli_connect('localhost', 'root', '', 'fe_website');
+    } catch (PDOexception $e) {
+        echo "Connection failed: " . $e->getMessage();
+        return false;
+    }
+
+    return $conn;
 }
 
 ?>

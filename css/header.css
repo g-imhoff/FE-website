@@ -62,6 +62,7 @@ header {
     justify-content: center;
     align-items: center;
 
+
     width: var(--sizeOfLink);
 
     button {
@@ -69,6 +70,7 @@ header {
         background: none;
         
         p {
+            cursor: pointer;
             font-family : var(--subTitleFont);
             color : var(--white);
         }

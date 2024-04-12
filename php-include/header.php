@@ -63,7 +63,7 @@
 
             <ul>
                 <li><a href="./lesson.php"><p><?php echo $trad['Header']['Lesson']?></p></a></li>
-                <li><a href="./about.php"><p><?php echo $trad['Header']['About']?></p></a></li>
+                <li><a href="./login.php"><p><?php echo $trad['Header']['Login']?></p></a></li>
                 <li><a href="./contact.php"><p><?php echo $trad['Header']['Contact']?></p></a></li>
 
                 <li>

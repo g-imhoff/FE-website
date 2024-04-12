@@ -1,5 +1,5 @@
 <?php
-
+$conn = connect();
 $sql = "SELECT * FROM `youtube_video` WHERE id = $id";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);

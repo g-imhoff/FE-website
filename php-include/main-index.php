@@ -1,8 +1,5 @@
-<?php
-    include_once 'db-connect.php';
-?>
-
 <?php 
+    $conn = connect();
     $sql = "SELECT * FROM youtube_video ORDER BY date DESC LIMIT 1";
     $result = mysqli_query($conn, $sql);
     $resultCheck = mysqli_num_rows($result);

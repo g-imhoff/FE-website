@@ -1,11 +1,17 @@
-/* Roboto Medium : */
+/* Poppins Medium : */
 @font-face {
     font-family: "Poppins Medium";
     src: url(../fonts/Poppins-Medium.ttf);
 }
 
-/* Roboto Regular : */
+/* Poppins Regular : */
 @font-face {
     font-family: "Poppins Regular";
     src: url(../fonts/Poppins-Regular.ttf);
+}
+
+/* Poppins Light : */
+@font-face {
+    font-family: "Poppins Light";
+    src: url(../fonts/Poppins-Light.ttf);
 }

@@ -1,0 +1,76 @@
+
+
+main {
+    width : 100vw;
+    height : auto;
+    display : flex; 
+    justify-content: center;
+    position: absolute; /* Positionner la boîte de façon absolue */
+    top: 50%; /* Placer la boîte à 50% du haut */
+    transform: translateY(-50%); /* Déplacer la boîte de moitié de sa propre hauteur vers le haut */
+
+    .box {
+        display: block;
+        border-radius: 20px;
+        width : 50vw;
+        height: auto;
+        background-color : var(--greyBlack);
+        min-width: 300px;
+
+        form {
+            padding : 20px;
+            display: flex;
+            flex-direction: column;
+
+            label {
+                font-family : var(--paraFont);
+                color : var(--white);
+            }
+
+            input + label {
+                margin-top : 40px;
+            }
+
+            label + input {
+                margin-top : 5px;  
+            }
+        }
+
+        button {
+            cursor : pointer;
+            border: none;
+            background-color: var(--whiterPrimaryBlueColor);
+            margin : 20px;
+            padding: 5px;
+            transition: box-shadow 0.3s ease-in-out;
+            transition: background-color 0.3s ease-in-out;
+
+            p {
+                font-family: var(--paraFont);
+            }
+        }
+
+        button:hover {
+            background-color: var(--primaryBlueColor);
+            box-shadow: inset 0px 0px 15px 1px rgba(0,0,0,0.35);   
+        }
+    }
+}
+
+footer {
+    display : flex; 
+    justify-content: center;
+    position: absolute; /* Positionner la boîte de façon absolue */
+    bottom: 20px; /* Placer la boîte en bas */
+    width : 100vw;
+    button {
+        cursor: pointer;
+        background: none;
+        border: none;
+        color : var(--greyWhite);
+
+        p {
+            font-family: var(--paraFont);
+        }
+    }
+}

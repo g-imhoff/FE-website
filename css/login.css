@@ -34,25 +34,25 @@ main {
             label + input {
                 margin-top : 5px;  
             }
-        }
 
-        button {
-            cursor : pointer;
-            border: none;
-            background-color: var(--whiterPrimaryBlueColor);
-            margin : 20px;
-            padding: 5px;
-            transition: box-shadow 0.3s ease-in-out;
-            transition: background-color 0.3s ease-in-out;
-
-            p {
-                font-family: var(--paraFont);
+            button {
+                cursor : pointer;
+                border: none;
+                background-color: var(--whiterPrimaryBlueColor);
+                margin : 20px;
+                padding: 5px;
+                transition: box-shadow 0.3s ease-in-out;
+                transition: background-color 0.3s ease-in-out;
+    
+                p {
+                    font-family: var(--paraFont);
+                }
             }
-        }
 
-        button:hover {
-            background-color: var(--primaryBlueColor);
-            box-shadow: inset 0px 0px 15px 1px rgba(0,0,0,0.35);   
+            button:hover {
+                background-color: var(--primaryBlueColor);
+                box-shadow: inset 0px 0px 15px 1px rgba(0,0,0,0.35);   
+            }
         }
     }
 }
@@ -60,17 +60,19 @@ main {
 footer {
     display : flex; 
     justify-content: center;
+    align-items: center;
     position: absolute; /* Positionner la boîte de façon absolue */
     bottom: 20px; /* Placer la boîte en bas */
     width : 100vw;
+
     button {
         cursor: pointer;
         background: none;
         border: none;
-        color : var(--greyWhite);
+    }
 
-        p {
-            font-family: var(--paraFont);
-        }
+    p {
+        color: var(--greyWhite);
+        font-family: var(--paraFont);
     }
 }

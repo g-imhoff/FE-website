@@ -9,8 +9,8 @@
 
 <body>
     <!-- Header -->
-    <header> 
 
+    <header> 
         <!-- Logo -->
         <a href="./index.php"><img src="./assets/img/logo.png" alt="logo" class="logo"></a>
 
@@ -19,8 +19,9 @@
             <ul>
                 <li><a href="./all-lesson.php"><p><?php echo $trad['Header']['Lesson']?></p></a></li>
                 <li><a href="./login.php"><p><?php echo $trad['Header']['Login']?></p></a></li>
-                <li><a href="./contact.php"><p><?php echo $trad['Header']['Contact']?></p></a></li>
-
+                <?php if (isset($_SESSION['user'])) { ?>
+                    <li><a href="./php-include/account.php"><p><?php echo $trad['Header']['Logout']?></p></a></li>
+                <?php } ?>
             </ul>
         </nav>
 
@@ -64,7 +65,6 @@
             <ul>
                 <li><a href="./lesson.php"><p><?php echo $trad['Header']['Lesson']?></p></a></li>
                 <li><a href="./login.php"><p><?php echo $trad['Header']['Login']?></p></a></li>
-                <li><a href="./contact.php"><p><?php echo $trad['Header']['Contact']?></p></a></li>
 
                 <li>
                     <form class="form-english" method="GET">

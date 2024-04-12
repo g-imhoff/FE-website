@@ -17,7 +17,11 @@ $trad = [
         "create" => "Créer un compte",
         "log" => "Se connecter",
         "haveAccount" => "J'ai déjà un compte",
-        "createAccount" => "Je veux créer un compte"
+        "createAccount" => "Je veux créer un compte", 
+        "passNoMatch" => "Les mots de passe ne correspondent pas",
+        "emailExists" => "L'email existe déjà",
+        "userExists" => "Le nom d'utilisateur existe déjà",
+        "emailInvalid" => "L'email est invalide"
     ]
 ]
 

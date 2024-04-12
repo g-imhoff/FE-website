@@ -15,6 +15,28 @@ if(isset($_GET['wantToCreate'])) {
 }
 ?> 
 
+<?php
+    require_once './php-include/function/login-function.php';
+?>
+
+<?php 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ($wantToCreate == 1) {
+        $error = createUser($_POST['email'], $_POST['username'], $_POST['password'], $_POST['confirmPassword']);
+    } else {
+        $error = logUser($_POST['email'], $_POST['password']);
+    }
+}
+
+if (isset($error)) {
+    if ($error == "Success" && $wantToCreate == 1) {
+        header('Location: ./login.php?wantToCreate=0');
+    } else if ($error == "Success" && $wantToCreate == 0) {
+        header('Location: ./index.php');
+    }
+}
+
+?>
 <body>
     <main> 
         <div class = "box">
@@ -22,28 +44,29 @@ if(isset($_GET['wantToCreate'])) {
 
             <form action="" method="post" autocomplete="off">
                 <label>Email</label>
-                <input type="text" name="email" value="">
+                <input type="text" name="email" value="<?php echo @$_POST['email']?>" required>
 
                 <label><?php echo $trad["login"]["user"]; ?></label>
-                <input type="text" name="username" value="">
+                <input type="text" name="username" value="<?php echo @$_POST['username']?>" required>
 
                 <label><?php echo $trad["login"]["pass"]; ?></label>
-                <input type="text" name="password" value="">
+                <input type="password" name="password" value="<?php echo @$_POST['password']?>" required>
 
-                <label><?php echo $trad["login"]["confirm"]; ?></label>
-                <input type="text" name="confirm password" value="">
+                <label><?php echo $trad["login"]["confirm"];?> <p style="color: red;"> <?php if (isset($error)) echo $error;?></p>
+
+                </label>
+                <input type="password" name="confirmPassword" value="<?php echo @$_POST['confirmPassword']?>" required>
+                <button type="submit" name="submit"><p><?php echo $trad["login"]["create"]; ?></p></button>
             </form>
-            <button type="submit" name="submit"><p><?php echo $trad["login"]["create"]; ?></p></button>
-
         <?php } else { ?>
             <form action="" method="post" autocomplete="off">
                 <label>Email</label>
-                <input type="text" name="email" value="">
+                <input type="text" name="email" value="<?php echo @$_POST['email']?>" required>
 
-                <label><?php echo $trad["login"]["pass"]; ?></label>
-                <input type="text" name="password" value="">
+                <label><?php echo $trad["login"]["pass"]; ?> <p style="color: red;"><?php if (isset($error) && $error !== "Success") echo $error;?></p></label>
+                <input type="password" name="password" value="<?php echo @$_POST['password']?>" required>
+                <button type="submit" name="submit"><p><?php echo $trad["login"]["log"]; ?></p></button>
             </form>
-            <button type="submit" name="submit"><p>Log in</p></button>
         <?php } ?>
         </div>
     </main>

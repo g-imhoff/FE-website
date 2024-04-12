@@ -1,0 +1,42 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+
+    article {
+        width: 80vw;
+        section {
+            display: flex;
+            justify-content: center;
+            img {
+                width : 60vw; 
+                height: auto;
+            }
+
+            p {
+                padding-top : 20px;
+                font-family: var(--subTitleFont);
+                color: var(--grey);
+            }
+
+
+            hgroup {
+                text-align: center;
+                h1 {
+                    padding-top : 20px;
+                    font-family: var(--titleFont);
+                    color : var(--white);
+                }
+    
+                h2 {
+                    padding-top : 5px;
+                    font-family: var(--subTitleFont);
+                    font-size: 14px;
+                    color : var(--greyWhite);
+                }
+            }
+
+        }
+    }
+}

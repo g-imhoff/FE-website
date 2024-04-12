@@ -1,3 +1,7 @@
+<?php
+    require_once './lang/get-lang.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,9 +14,6 @@
         <link rel="stylesheet" href="./css/base.css">
         <link rel="stylesheet" href="./css/font.css">
 
-        <!-- Js -->
-        <script src="./js/burgerMenu.js"></script>
-
         <!-- Favicon -->
         <link rel="shortcut icon" href="./assets/ico/favicon.ico" type="image/x-icon">
     </head>
@@ -22,7 +23,7 @@
     ?>
 
     <?php
-        include_once './php-include/main.php'
+        include_once './php-include/main-index.php'
     ?>
 
 </html>

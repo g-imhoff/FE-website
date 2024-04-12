@@ -1,10 +1,10 @@
-<!-- Necessary for the header to work -->
 <head>
-    <!-- Css -->
+    <!-- CSS -->        
     <link rel="stylesheet" href="./css/header.css">
 
     <!-- Js -->
     <script src="./js/burgerMenu.js"></script>
+
 </head>
 
 <body>
@@ -17,17 +17,31 @@
         <!-- Navigation -->
         <nav>
             <ul>
-                <li><a href="./lesson.php"><p>Lesson</p></a></li>
-                <li><a href="./about.php"><p>About</p></a></li>
-                <li><a href="./contact.php"><p>Contact</p></a></li>
+                <li><a href="./all-lesson.php"><p><?php echo $trad['Header']['Lesson']?></p></a></li>
+                <li><a href="./login.php"><p><?php echo $trad['Header']['Login']?></p></a></li>
+                <li><a href="./contact.php"><p><?php echo $trad['Header']['Contact']?></p></a></li>
 
             </ul>
         </nav>
 
-        <!-- Login -->
+        <!-- Change language -->
         <form class="form-animation form-english form-display">
-            <input type="hidden" name="lang" value="en">
-            <button type="submit"> <p>Change to english</p> </button>
+            <?php
+                foreach ($_GET as $key => $value) {
+                    if ($key !== 'lang') {
+                        echo '<input type="hidden" name="' . htmlspecialchars($key) . '" value="' . htmlspecialchars($value) . '">';
+                    }
+                }
+            ?>
+
+            <input type="hidden" name="lang" value="<?php 
+                if($lang == 'fr') {
+                    echo 'en';
+                } else {
+                    echo 'fr';
+                }
+            ?>">
+            <button type="submit"> <p><?php echo htmlspecialchars($trad['Header']['Change'])?></p> </button>
         </form>
 
         <!-- Burger Menu -->
@@ -48,15 +62,30 @@
             </div>
 
             <ul>
-                <li><a href="./lesson.php"><p>Lesson</p></a></li>
-                <li><a href="./about.php"><p>About</p></a></li>
-                <li><a href="./contact.php"><p>Contact</p></a></li>
+                <li><a href="./lesson.php"><p><?php echo $trad['Header']['Lesson']?></p></a></li>
+                <li><a href="./about.php"><p><?php echo $trad['Header']['About']?></p></a></li>
+                <li><a href="./contact.php"><p><?php echo $trad['Header']['Contact']?></p></a></li>
+
                 <li>
-                    <form class = "form-english">
-                        <input type="hidden" name="lang" value="en">
-                        <button type="submit"> <p>Change to english</p> </button>
+                    <form class="form-english" method="GET">
+                        <?php
+                            foreach ($_GET as $key => $value) {
+                                if ($key !== 'lang') {
+                                    echo '<input type="hidden" name="' . htmlspecialchars($key) . '" value="' . htmlspecialchars($value) . '">';
+                                }
+                            }
+                        ?>
+                        <input type="hidden" name="lang" value="<?php 
+                            if($lang == 'fr') {
+                                echo 'en';
+                            } else {
+                                echo 'fr';
+                            }
+                        ?>">
+                        <button type="submit"> <p><?php echo htmlspecialchars($trad['Header']['Change'])?></p> </button>
                     </form>
                 </li>
+
             </ul>
         </div>
 

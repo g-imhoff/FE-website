@@ -64,7 +64,7 @@ main {
             justify-content: center;
             align-items: center;
 
-            button {
+            a {
                 background: none;
                 color: inherit;
                 border: none;
@@ -95,7 +95,7 @@ main {
                 }
             }
 
-            button:hover {
+            a:hover {
                 border-radius: 20px;
                 width: 80%;
 

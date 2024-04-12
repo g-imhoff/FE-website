@@ -8,8 +8,10 @@
     --sizeOfLink: 15vw;
     --primaryBlueColor : #4a50ff;
     --darkerPrimaryBlueColor : #3730ab;
-    --white : #f8f8f8;
+    --white : #ffffff;
     --black : #121212;
+    --grey : #696969;
+    --greyWhite : #A9A9A9;
     --titleFont : "Poppins Medium";
     --subTitleFont : "Poppins Regular";
 }

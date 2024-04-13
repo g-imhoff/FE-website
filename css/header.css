@@ -5,6 +5,11 @@
 */
 
 /*Header settings :*/ 
+
+p {
+    font-size : 1em;
+}
+
 header {
     position: relative; 
 

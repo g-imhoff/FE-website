@@ -4,7 +4,6 @@
 
     <!-- Js -->
     <script src="./js/burgerMenu.js"></script>
-
 </head>
 
 <body>
@@ -17,12 +16,12 @@
         <!-- Navigation -->
         <nav>
             <ul>
-                <li><a href="./all-lesson.php"><p><?php echo $trad['Header']['Lesson']?></p></a></li>
+                <li><a href="./all-lesson.php"><p><?php echo $trad['Header']['Lesson'];?></p></a></li>
 
                 <?php if (isset($_SESSION['username'])) { ?>
-                    <li><a href="./account.php"><p><?php echo $trad['Header']['Account']?></p></a></li>
+                    <li><a href="./account.php"><p><?php echo $trad['Header']['Account'];?></p></a></li>
                 <?php } else { ?>
-                    <li><a href="./login.php"><p><?php echo $trad['Header']['Login']?></p></a></li>
+                    <li><a href="./login.php"><p><?php echo $trad['Header']['Login'];?></p></a></li>
                 <?php } ?>
             </ul>
         </nav>
@@ -44,7 +43,7 @@
                     echo 'fr';
                 }
             ?>">
-            <button type="submit"> <p><?php echo htmlspecialchars($trad['Header']['Change'])?></p> </button>
+            <button type="submit"><p><?php echo htmlspecialchars($trad['Header']['Change']);?></p></button>
         </form>
 
         <!-- Burger Menu -->
@@ -65,8 +64,8 @@
             </div>
 
             <ul>
-                <li><a href="./lesson.php"><p><?php echo $trad['Header']['Lesson']?></p></a></li>
-                <li><a href="./login.php"><p><?php echo $trad['Header']['Login']?></p></a></li>
+                <li><a href="./lesson.php"><p><?php echo $trad['Header']['Lesson'];?></p></a></li>
+                <li><a href="./login.php"><p><?php echo $trad['Header']['Login'];?></p></a></li>
 
                 <li>
                     <form class="form-english" method="GET">
@@ -84,7 +83,7 @@
                                 echo 'fr';
                             }
                         ?>">
-                        <button type="submit"> <p><?php echo htmlspecialchars($trad['Header']['Change'])?></p> </button>
+                        <button type="submit"><p><?php echo htmlspecialchars($trad['Header']['Change']);?></p></button>
                     </form>
                 </li>
 

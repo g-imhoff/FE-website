@@ -1,6 +1,6 @@
 <?php
     require_once './lang/get-lang.php';
-    include_once './php-include/db-connect.php';
+    include_once './php-include/function/db-connect.php';
 ?>  
 
 <?php
@@ -27,11 +27,11 @@
     </head>
     <body>
         <?php
-            include_once "./php-include/header.php";
+            include_once "./php-include/template/header.php";
         ?>
 
         <?php
-            include_once './php-include/main-lesson.php'
+            include_once './php-include/lesson-page.php'
         ?>
     </body>
 </html>

@@ -36,7 +36,7 @@ if($resultCheck > 0) {
             </section>
 
             <section>
-                <p><?php echo $date?></p>
+                <p><?php echo $date;?></p>
             </section>
 
             <section>

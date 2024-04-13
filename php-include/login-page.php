@@ -63,7 +63,7 @@ if (isset($error)) {
                 <label>Email</label>
                 <input type="text" name="email" value="<?php echo @$_POST['email']?>" required>
 
-                <label><?php echo $trad["login"]["pass"]; ?> <p style="color: red;"><?php if (isset($error) && $error !== "Success") echo $error;?></p></label>
+                <label><?php echo $trad["login"]["pass"]; ?><p style="color: red;"><?php if (isset($error) && $error !== "Success") echo $error;?></p></label>
                 <input type="password" name="password" value="<?php echo @$_POST['password']?>" required>
                 <button type="submit" name="submit"><p><?php echo $trad["login"]["log"]; ?></p></button>
             </form>
@@ -75,12 +75,12 @@ if (isset($error)) {
         <?php if ($wantToCreate == 1) {?>
             <form method="GET">
                 <input type="hidden" name="wantToCreate" value="0">
-                <button type="submit"><p><?php echo $trad["login"]["haveAccount"]; ?></p></button>
+                <button type="submit"><p><?php echo $trad["login"]["haveAccount"];?></p></button>
             </form>
         <?php } else { ?>
             <form method="GET">
                 <input type="hidden" name="wantToCreate" value="1">
-                <button type="submit"><p><?php echo $trad["login"]["createAccount"]; ?></p></button>
+                <button type="submit"><p><?php echo $trad["login"]["createAccount"];?></p></button>
             </form>
         <?php } ?>
     </footer>

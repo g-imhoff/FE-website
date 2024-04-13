@@ -9,7 +9,7 @@ main {
     
     .box {
         height: 700px;
-        width: 90%;
+        width: 80vw;
         background-color: var(--primaryBlueColor);
         border-radius: 10px;
 
@@ -35,7 +35,7 @@ main {
 
                 h1 {
                     font-family: var(--titleFont);
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                     color: var(--black);
                 }
             }
@@ -115,13 +115,14 @@ main {
 
 @media screen and (max-width: 768px) {
     main {
-        height: 600px;
+        height: auto;
+        padding-top: 40px;
         .box {
-            height: 500px;
+            height: 600px;
             .title-container {
                 .title-box {
                     h1 {
-                        font-size: 1rem;
+                        font-size: 0.9rem;
                     }
                 }
             }

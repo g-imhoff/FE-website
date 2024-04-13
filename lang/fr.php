@@ -3,9 +3,10 @@
 $trad = [
     "Header" => [
         "Lesson" => "Leçon",
-        "Login" => "Login",
+        "Login" => "Se connecter",
         "Contact" => "Contact",
-        "Change" => "Change to English"
+        "Change" => "Change to English",
+        "Account" => "Mon compte"
     ], 
     "Main" => [
         "Start" => "Commencer la leçon"

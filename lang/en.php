@@ -4,7 +4,8 @@ $trad = [
         "Lesson" => "Lesson",
         "Login" => "Login",
         "Contact" => "Contact",
-        "Change" => "Changer en Français"
+        "Change" => "Changer en Français",
+        "Account" => "My account"
     ],
     "Main" => [
         "Start" => "Start the lesson"

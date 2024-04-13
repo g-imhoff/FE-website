@@ -18,9 +18,11 @@
         <nav>
             <ul>
                 <li><a href="./all-lesson.php"><p><?php echo $trad['Header']['Lesson']?></p></a></li>
-                <li><a href="./login.php"><p><?php echo $trad['Header']['Login']?></p></a></li>
-                <?php if (isset($_SESSION['user'])) { ?>
-                    <li><a href="./php-include/account.php"><p><?php echo $trad['Header']['Logout']?></p></a></li>
+
+                <?php if (isset($_SESSION['username'])) { ?>
+                    <li><a href="./account.php"><p><?php echo $trad['Header']['Account']?></p></a></li>
+                <?php } else { ?>
+                    <li><a href="./login.php"><p><?php echo $trad['Header']['Login']?></p></a></li>
                 <?php } ?>
             </ul>
         </nav>

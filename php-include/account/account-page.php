@@ -10,6 +10,10 @@ if ($_SESSION["username"] == null || $_SESSION["email"] == null) {
 
 ?>
 
+<?php 
+    include_once "./php-include/account/account-data.php";
+?>
+
 <body>
     <main>
         <article class="first-grid">
@@ -17,10 +21,10 @@ if ($_SESSION["username"] == null || $_SESSION["email"] == null) {
 
             <p><?php echo $_SESSION["username"]; ?></p>
             <p><?php echo $_SESSION["email"]; ?></p>
-
-            <?php 
-
-            ?>
+            
+            <?php if (verifyAdmin($_SESSION["username"]) == 1) { ?>
+                <a href="./admin/admin.php"> ADMIN PAGE </a>
+            <?php } ?>
         </article>
 
         <article class="second-grid">

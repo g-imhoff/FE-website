@@ -17,7 +17,7 @@
 ?>
 
 <head>
-    <link rel="stylesheet" href="./css/main-index.css">
+    <link rel="stylesheet" href="/css/main-index.css">
 </head>
 
 <body>
@@ -46,7 +46,7 @@
             </div>
 
             <div class = "button-container">
-                <a href="./lesson.php?id=<?php echo $id?>"><p><?php echo $trad['Main']['Start'];?></p></a>
+                <a href="/lesson.php?id=<?php echo $id?>"><p><?php echo $trad['Main']['Start'];?></p></a>
             </div>
         </div>
     </main>

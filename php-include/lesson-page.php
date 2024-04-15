@@ -25,7 +25,7 @@ if($resultCheck > 0) {
 ?>
 
 <head>
-    <link rel="stylesheet" href="./css/main-lesson.css">
+    <link rel="stylesheet" href="/css/main-lesson.css">
 </head>
 
 <body>

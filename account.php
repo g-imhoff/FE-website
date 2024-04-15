@@ -12,11 +12,11 @@
         <title>FE</title>
 
         <!-- CSS -->        
-        <link rel="stylesheet" href="./css/base.css">
-        <link rel="stylesheet" href="./css/font.css">
+        <link rel="stylesheet" href="/css/base.css">
+        <link rel="stylesheet" href="/css/font.css">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="./assets/ico/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/assets/ico/favicon.ico" type="image/x-icon">
     </head>
 
     <?php

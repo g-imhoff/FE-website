@@ -1,9 +1,9 @@
 <head>
     <!-- CSS -->        
-    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="/css/header.css">
 
     <!-- Js -->
-    <script src="./js/burgerMenu.js"></script>
+    <script src="/js/burgerMenu.js"></script>
 </head>
 
 <body>
@@ -11,17 +11,17 @@
 
     <header> 
         <!-- Logo -->
-        <a href="./index.php"><img src="./assets/img/logo.png" alt="logo" class="logo"></a>
+        <a href="/index.php"><img src="/assets/img/logo.png" alt="logo" class="logo"></a>
 
         <!-- Navigation -->
         <nav>
             <ul>
-                <li><a href="./all-lesson.php"><p><?php echo $trad['Header']['Lesson'];?></p></a></li>
+                <li><a href="/all-lesson.php"><p><?php echo $trad['Header']['Lesson'];?></p></a></li>
 
                 <?php if (isset($_SESSION['username'])) { ?>
-                    <li><a href="./account.php"><p><?php echo $trad['Header']['Account'];?></p></a></li>
+                    <li><a href="/account.php"><p><?php echo $trad['Header']['Account'];?></p></a></li>
                 <?php } else { ?>
-                    <li><a href="./login.php"><p><?php echo $trad['Header']['Login'];?></p></a></li>
+                    <li><a href="/login.php"><p><?php echo $trad['Header']['Login'];?></p></a></li>
                 <?php } ?>
             </ul>
         </nav>
@@ -59,17 +59,17 @@
         <div id="sidebar"> 
             <div id = "new-header"> 
                 <div id="close-menu" onclick=closeSidebar()> 
-                    <img src="../assets/img/close.png" alt="close button">
+                    <img src="/assets/img/close.png" alt="close button">
                 </div>
             </div>
 
             <ul>
-                <li><a href="./lesson.php"><p><?php echo $trad['Header']['Lesson'];?></p></a></li>
-
+                <li><a href="/lesson.php"><p><?php echo $trad['Header']['Lesson'];?></p></a></li>
+                
                 <?php if (isset($_SESSION['username'])) { ?>
-                    <li><a href="./account.php"><p><?php echo $trad['Header']['Account'];?></p></a></li>
+                    <li><a href="/account.php"><p><?php echo $trad['Header']['Account'];?></p></a></li>
                 <?php } else { ?>
-                    <li><a href="./login.php"><p><?php echo $trad['Header']['Login'];?></p></a></li>
+                    <li><a href="/login.php"><p><?php echo $trad['Header']['Login'];?></p></a></li>
                 <?php } ?>
 
                 <li>

@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 
 <?php
@@ -30,9 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 if (isset($error)) {
     if ($error == "Success" && $wantToCreate == 1) {
-        header('Location: ./login.php?wantToCreate=0');
+        header('Location: /login.php?wantToCreate=0');
     } else if ($error == "Success" && $wantToCreate == 0) {
-        header('Location: ./index.php');
+        header('Location: /account.php');
     }
 }
 

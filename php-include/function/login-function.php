@@ -40,11 +40,13 @@ function createUser($email, $username, $password, $confirmPassword) {
 function logUser($email, $password) {
     $conn = connect();
     
-    $sql = "SELECT `password`, `username` FROM users WHERE `email` = 'purpl5rain.contact@gmail.com'";
+    $sql = "SELECT `password`, `username` FROM users WHERE `email` = '$email'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
+        echo $row['password'];
+        echo $password;
         if ($row['password'] == $password) {
             $_SESSION['email'] = $email;
             $_SESSION['username'] = $row['username'];

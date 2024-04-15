@@ -3,18 +3,23 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 800px;
     width: 100vw;
+    height : auto;
+    padding-top : 20px;
 
-    
     .box {
-        height: 700px;
+        height: auto;
         width: 80vw;
         background-color: var(--primaryBlueColor);
         border-radius: 10px;
+        padding-top: 30px;
+
+        div + div {
+            margin-top : 30px;
+        }
 
         .title-container {
-            height: 15%;
+            height: 80px;
             width: 100%;
     
             display: flex;
@@ -35,14 +40,14 @@ main {
 
                 h1 {
                     font-family: var(--titleFont);
-                    font-size: 1.2rem;
+                    font-size: clamp(1.2rem, 1.7vw, 4rem);
                     color: var(--black);
                 }
             }
         }
 
         .video-container {
-            height: 70%;
+            height: auto;
             width: 100%;
 
             display: flex;
@@ -51,13 +56,13 @@ main {
 
             .youtube-video {
                 aspect-ratio: 16 / 9;
-                max-width: 800px;
-                width: 60%;
+                width: clamp(200px, 60vw, 1000px);
             }
         }
 
         .button-container {
-            height: 15%;
+            padding-bottom: 30px;
+            height: 80px;
             width: 100%;
 
             display: flex;
@@ -78,8 +83,8 @@ main {
                 box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.2);
 
                 border-radius: 100%;
-                width: 30px;
-                height: 30px;
+                width: clamp(1rem, 2vw, 4rem);
+                height: clamp(1rem, 2vw, 4rem);
                 transition: 2s ease-in-out;
 
                 display : flex; 
@@ -92,6 +97,7 @@ main {
                     transition: 1s ease-in-out;
                     transition-delay: 0s;
                     font-family: var(--subTitleFont);
+                    font-size: clamp(0.7rem, 1.5vw, 1.3rem);
                 }
             }
 
@@ -115,14 +121,12 @@ main {
 
 @media screen and (max-width: 768px) {
     main {
-        height: auto;
-        padding-top: 40px;
         .box {
-            height: 600px;
             .title-container {
+                height: 60px;
                 .title-box {
                     h1 {
-                        font-size: 0.9rem;
+                        font-size: clamp(0.6rem, 2.5vw, 2rem);
                     }
                 }
             }
@@ -131,6 +135,10 @@ main {
                 .youtube-video {
                     width: 80%;
                 }
+            }
+
+            .button-container {
+                height: 60px;
             }
         }
     }

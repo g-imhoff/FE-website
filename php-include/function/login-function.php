@@ -4,10 +4,12 @@ function createUser($email, $username, $password, $confirmPassword) {
     global $trad;
 
     if ($password !== $confirmPassword) {
+        disconnect($conn);
         return $trad["login"]["passNoMatch"];
     }
 
     if (!(filter_var($email, FILTER_VALIDATE_EMAIL))) {
+        disconnect($conn);
         return $trad["login"]["emailInvalid"];
     }
 
@@ -17,11 +19,13 @@ function createUser($email, $username, $password, $confirmPassword) {
     if ($queryVerifyEmail->execute()) {
         $resultVerifyEmail = $queryVerifyEmail->get_result();
     } else {
+        disconnect($conn);
         return "Error: " . $sql . "<br>" . $conn->error;
     }
     $queryVerifyEmail->close();
 
     if ($resultVerifyEmail->num_rows > 0) {
+        disconnect($conn);
         return $trad["login"]["emailExists"];
     }
 
@@ -31,6 +35,7 @@ function createUser($email, $username, $password, $confirmPassword) {
     if ($queryVerifyUsername->execute()) {
         $resultVerifyUsername = $queryVerifyUsername->get_result();
     } else {
+        disconnect($conn);
         return "Error: " . $sql . "<br>" . $conn->error;
     }
     $queryVerifyUsername->close();
@@ -44,9 +49,11 @@ function createUser($email, $username, $password, $confirmPassword) {
 
     if ($queryCreate->execute()) {
         $queryCreate->close();
+        disconnect($conn);
         return "Success";
     } else {
         $queryCreate->close();
+        disconnect($conn);
         return "Error: " . $sql . "<br>" . $conn->error;
     }
 }
@@ -60,10 +67,12 @@ function logUser($email, $password) {
     if ($query->execute()) {
         $result = $query->get_result();
     } else {
+        disconnect($conn);
         return "Error: " . $sql . "<br>" . $conn->error;
     }
+
     $query->close();
-    
+    disconnect($conn);
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
 

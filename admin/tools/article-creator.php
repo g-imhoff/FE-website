@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="/admin/css/article-creator.css">
+    <link rel="stylesheet" href="/css/article-creator.css">
 </head>
 
 <body>

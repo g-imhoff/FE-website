@@ -21,7 +21,7 @@
         <!-- CSS -->        
         <link rel="stylesheet" href="/css/base.css">
         <link rel="stylesheet" href="/css/font.css">
-        <link rel="stylesheet" href="/admin/css/main-admin.css">
+        <link rel="stylesheet" href="/css/main-admin.css">
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="/assets/ico/favicon.ico" type="image/x-icon">

@@ -65,7 +65,12 @@
 
             <ul>
                 <li><a href="./lesson.php"><p><?php echo $trad['Header']['Lesson'];?></p></a></li>
-                <li><a href="./login.php"><p><?php echo $trad['Header']['Login'];?></p></a></li>
+
+                <?php if (isset($_SESSION['username'])) { ?>
+                    <li><a href="./account.php"><p><?php echo $trad['Header']['Account'];?></p></a></li>
+                <?php } else { ?>
+                    <li><a href="./login.php"><p><?php echo $trad['Header']['Login'];?></p></a></li>
+                <?php } ?>
 
                 <li>
                     <form class="form-english" method="GET">

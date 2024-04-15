@@ -2,9 +2,7 @@
 function showSidebar() {
     sidebar = document.querySelector('#sidebar');
     burgerMenu = document.querySelector('#burger-menu');
-    box = document.querySelector('.box');
-    
-    box.style.display = 'none';
+
     sidebar.style.display = 'flex';
     burgerMenu.style.display = 'none';
 }
@@ -13,9 +11,7 @@ function showSidebar() {
 function closeSidebar() {
     sidebar = document.querySelector('#sidebar');
     burgerMenu = document.querySelector('#burger-menu');
-    box = document.querySelector('.box');
 
-    box.style.display = 'block'
     sidebar.style.display = 'none';
     burgerMenu.style.display = 'flex';
 }

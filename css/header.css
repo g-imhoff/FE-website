@@ -76,7 +76,7 @@ header {
             cursor: pointer;
             font-family : var(--subTitleFont);
             color : var(--white);
-            font-size : clamp(1em, 1.2vw, 4em);
+            font-size: clamp(1em, 1.2vw, 4em);
         }
     }
 }
@@ -103,6 +103,14 @@ header {
 
 /*Media queries*/
 @media screen and (max-width: 768px) {
+    .form-english {
+        button {
+            p {
+                font-size: clamp(0.9rem, 4vw, 1.7rem);
+            }
+        }
+    }
+
     :root {
         --sizeOfLink: 20vw; 
     }

@@ -23,4 +23,8 @@
         include_once "./php-include/template/header.php";
     ?>
 
+    <?php
+        include_once "./php-include/account/account-page.php"
+    ?>
+
 </html>

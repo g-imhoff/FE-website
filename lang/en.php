@@ -22,6 +22,12 @@ $trad = [
         "emailExists" => "Email already exists",
         "userExists" => "Username already exists",
         "emailInvalid" => "Email is invalid"
+    ],
+    "account" => [
+        "profil" => "Profile",
+        "comments" => "Last comments",
+        "notes" => "Last notes",
+        "favorite" => "Favorite"
     ]
 ]
 ?>

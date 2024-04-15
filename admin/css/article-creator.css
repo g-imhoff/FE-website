@@ -1,7 +1,7 @@
 .article-creator {
     display: none;
     width: 90vw;
-    height: 600px;
+    height: auto;
     background-color: var(--greyBlack);
     padding : 20px;
     border-radius: 20px;

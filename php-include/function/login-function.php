@@ -54,8 +54,8 @@ function createUser($email, $username, $password, $confirmPassword) {
 function logUser($email, $password) {
     $conn = connect();
     
-    $query = $conn->prepare("SELECT `password`, `username` FROM users WHERE `email` = ?");
-    $query->bind_param("s", $email);
+    $query = $conn->prepare("SELECT `email`, `password`, `username` FROM users WHERE `email` = ? OR `username` = ?");
+    $query->bind_param("ss", $email, $email);
     
     if ($query->execute()) {
         $result = $query->get_result();
@@ -68,7 +68,7 @@ function logUser($email, $password) {
         $row = $result->fetch_assoc();
 
         if ($row['password'] == $password) {
-            $_SESSION['email'] = $email;
+            $_SESSION['email'] = $row['email'];
             $_SESSION['username'] = $row['username'];
 
             return "Success";

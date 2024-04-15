@@ -7,7 +7,7 @@
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
     } else {
-        header('Location: ./all-lesson.php');
+        header('Location: /all-lesson.php');
     }
 ?>
 

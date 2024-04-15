@@ -20,7 +20,7 @@ if($resultCheck > 0) {
         $thumbnail = $row['Thumbnail'];
     }
 } else {
-    header('Location: ./all-lesson.php');
+    header('Location: /all-lesson.php');
 }
 ?>
 

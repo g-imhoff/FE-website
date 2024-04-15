@@ -16,7 +16,7 @@ if(isset($_GET['wantToCreate'])) {
 ?> 
 
 <?php
-    require_once './php-include/function/login-function.php';
+    require_once ($_SERVER['DOCUMENT_ROOT'] . '/php-include/function/login-function.php');
 ?>
 
 <?php 
@@ -60,7 +60,7 @@ if (isset($error)) {
             </form>
         <?php } else { ?>
             <form action="" method="post" autocomplete="off">
-                <label>Email</label>
+                <label><?php echo $trad["login"]["email"]; ?></label>
                 <input type="text" name="email" value="<?php echo @$_POST['email']?>" required>
 
                 <label><?php echo $trad["login"]["pass"]; ?><p style="color: red;"><?php if (isset($error) && $error !== "Success") echo $error;?></p></label>

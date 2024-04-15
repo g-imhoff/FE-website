@@ -1,11 +1,11 @@
 <head>
-    <link rel="stylesheet" href="./css/main-account.css">
+    <link rel="stylesheet" href="/css/main-account.css">
 </head>
 
 <?php 
 
 if ($_SESSION["username"] == null || $_SESSION["email"] == null) {
-    header('Location: ./login.php');
+    header('Location: /login.php');
 }
 
 ?>
@@ -21,9 +21,9 @@ if ($_SESSION["username"] == null || $_SESSION["email"] == null) {
 
             <p><?php echo $_SESSION["username"]; ?></p>
             <p><?php echo $_SESSION["email"]; ?></p>
-            
+
             <?php if (verifyAdmin($_SESSION["username"]) == 1) { ?>
-                <a href="./admin/admin.php"> ADMIN PAGE </a>
+                <a href="/admin/admin.php"> ADMIN PAGE </a>
             <?php } ?>
         </article>
 

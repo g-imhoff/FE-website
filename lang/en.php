@@ -11,6 +11,7 @@ $trad = [
         "Start" => "Start the lesson"
     ], 
     "login" => [
+        'email' => 'Email or Username',
         "user" => "Username",
         "pass" => "Password",
         "confirm" => "Confirm Password",

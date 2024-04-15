@@ -5,6 +5,19 @@ main {
 
     button {
         width: 50vw;
+        height: 50px;
         margin-top: 20px;
+        margin-bottom: 20px;
+
+        border-radius: 20px;
+
+        border: none;
+        cursor: pointer;
+        background-color: var(--primaryBlueColor);
+        
+        p {
+            color : var(--white);
+            font-family: var(--paraFont);
+        }
     }
 }

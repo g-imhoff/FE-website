@@ -39,7 +39,7 @@
             require_once('./all-tools.php');
 
             foreach($tools as $tool) {
-                echo '<button onclick="showClass(\''. $tool["class"] . '\')">' . $tool["name"] . '</button>';
+                echo '<button onclick="showClass(\''. $tool["class"] . '\')">' . '<p>' . $tool["name"] . '</p>' . '</button>';
                 include_once($tool["file"]);
             }
 

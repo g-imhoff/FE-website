@@ -3,6 +3,44 @@
     include_once './db/db-connect.php';
 ?> 
 
+<?php
+$wantToCreate = 0;
+if(isset($_GET['wantToCreate'])) {
+    $wantToCreate = $_GET['wantToCreate'];
+
+    setcookie('wantToCreate', $wantToCreate, time() + 3600 * 24 * 7, '/'); // le cookie reste 7 jours
+} else {
+    if (isset($_COOKIE['wantToCreate'])) {
+        $wantToCreate = $_COOKIE['wantToCreate'];
+    }
+}
+?> 
+
+<?php 
+$db = new Database();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ($wantToCreate == 1) {
+        $error = $db->createUser($_POST['email'], $_POST['username'], $_POST['password'], $_POST['confirmPassword']);
+    } else {
+        $error = $db->logUser($_POST['email'], $_POST['password']);
+    }
+}
+
+if (isset($error)) {
+    if ($error == "Success" && $wantToCreate == 1) {
+        header('Location: /login.php?wantToCreate=0');
+    } else if ($error == "Success" && $wantToCreate == 0) {
+        header('Location: /account.php');
+    }
+}
+
+if (isset($_SESSION["username"]) || isset($_COOKIE["username"])) {
+    header("Location: /account.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,15 +54,22 @@
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="/assets/ico/favicon.ico" type="image/x-icon">
+
+        <script defer src="/js/formLoginValidation.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body>
         <?php
-            include_once "./php-include/template/header.php";
+            include_once "./template/header.php";
         ?>
 
         <?php
-            include_once './php-include/login-page.php';
+            include_once './main/login-main.php';
         ?>
 
+        <?php
+            include_once "./footer/login-footer.php";
+        ?>
+        
     </body>
 </html>

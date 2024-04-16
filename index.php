@@ -16,23 +16,15 @@
         <link rel="stylesheet" href="/css/font.css">
 
         <!-- Favicon -->
-        <link rel="shortcut icon" href="/assets/ico/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="./assets/ico/favicon.ico" type="image/x-icon">
     </head>
 
-    <body>
-        <?php
-            $db = new Database();
-            $conn = $db->pdo;
-
-            var_dump($conn);
-        ?>
-    </body>
     <?php
-        include_once "./php-include/template/header.php";
+        include_once "./template/header.php";
     ?>
 
     <?php
-        include_once './php-include/index-page.php'
+        include_once './main/index-main.php'
     ?>
 
 </html>

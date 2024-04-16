@@ -45,13 +45,22 @@ main {
                 transition: background-color 0.3s ease-in-out;
     
                 p {
+                    color : var(--white);
                     font-family: var(--paraFont);
+                    margin: 0;
                 }
             }
 
             button:hover {
                 background-color: var(--primaryBlueColor);
                 box-shadow: inset 0px 0px 15px 1px rgba(0,0,0,0.35);   
+            }
+
+            p {
+                color: var(--red);
+                font-family: var(--paraFont);
+                margin-top: 10px;
+            
             }
         }
     }

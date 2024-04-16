@@ -20,11 +20,11 @@
     </head>
 
     <?php
-        include_once "./php-include/template/header.php";
+        include_once "./template/header.php";
     ?>
 
     <?php
-        include_once "./php-include/account/account-page.php"
+        include_once "./main/account-main.php"
     ?>
 
 </html>

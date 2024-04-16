@@ -1,26 +1,17 @@
 <?php
 
-function connect() {
-    $dsn = "mysql:host=localhost;dbname=fe_website";
-    $username = "root";
-    $password = "";
-
-    try {
-        $conn = mysqli_connect('localhost', 'root', '', 'fe_website');
-    } catch (PDOexception $e) {
-        echo "Connection failed: " . $e->getMessage();
-        return false;
+class Database {
+    public $pdo;
+    
+    function __construct() {
+        $dbFile = dirname(__FILE__) . "/fe_website.sqlite3";
+        $this->pdo = new PDO("sqlite:$dbFile");
     }
-
-    return $conn;
-}
-
-function disconnect($conn) {
-    $conn->close();
 }
 
 function checkAccountExist($username, $email) {
-    $conn = connect();
+    $db = new Database();
+    $conn = $db->connect();
     $sql = $conn->prepare("SELECT * FROM users WHERE username = ? OR email = ?");
     $sql->bind_param("ss", $username, $email);
     $sql->execute();

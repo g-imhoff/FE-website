@@ -1,6 +1,6 @@
 <?php
     require_once './lang/get-lang.php';
-    require_once './php-include/function/db-connect.php';
+    include_once './db/db-connect.php';
 ?>
 
 <!DOCTYPE html>

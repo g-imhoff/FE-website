@@ -1,6 +1,6 @@
 <?php
     require_once './lang/get-lang.php';
-    require_once './php-include/function/db-connect.php';
+    include_once './db/db-connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +19,14 @@
         <link rel="shortcut icon" href="/assets/ico/favicon.ico" type="image/x-icon">
     </head>
 
+    <body>
+        <?php
+            $db = new Database();
+            $conn = $db->pdo;
+
+            var_dump($conn);
+        ?>
+    </body>
     <?php
         include_once "./php-include/template/header.php";
     ?>

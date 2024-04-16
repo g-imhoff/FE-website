@@ -1,6 +1,7 @@
 <?php
 function createUser($email, $username, $password, $confirmPassword) {
-    $conn = connect();
+    $db = new Database();
+    $conn = $db->connect();
     global $trad;
 
     if ($password !== $confirmPassword) {
@@ -59,7 +60,8 @@ function createUser($email, $username, $password, $confirmPassword) {
 }
 
 function logUser($email, $password) {
-    $conn = connect();
+    $db = new Database();
+    $conn = $db->connect();
     
     $query = $conn->prepare("SELECT `email`, `password`, `username` FROM users WHERE `email` = ? OR `username` = ?");
     $query->bind_param("ss", $email, $email);

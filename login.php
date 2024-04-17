@@ -27,14 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-if (isset($error)) {
-    if ($error == "Success" && $wantToCreate == 1) {
-        header('Location: /login.php?wantToCreate=0');
-    } else if ($error == "Success" && $wantToCreate == 0) {
-        header('Location: /account.php');
-    }
-}
-
 if (isset($_SESSION["username"]) || isset($_COOKIE["username"])) {
     header("Location: /account.php");
 }
@@ -55,8 +47,8 @@ if (isset($_SESSION["username"]) || isset($_COOKIE["username"])) {
         <!-- Favicon -->
         <link rel="shortcut icon" href="/assets/ico/favicon.ico" type="image/x-icon">
 
+        <script defer src="/js/formBaseFunction.js"></script>
         <script defer src="/js/formLoginValidation.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body>
         <?php
@@ -69,6 +61,10 @@ if (isset($_SESSION["username"]) || isset($_COOKIE["username"])) {
 
         <?php
             include_once "./footer/login-footer.php";
+        ?>
+
+        <?php
+            echo $_SESSION['test'];
         ?>
         
     </body>

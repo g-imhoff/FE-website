@@ -17,17 +17,7 @@ trad = {
     }
 }
 
-var lang = 'fr';
 var wantToCreate = 0;
-
-params = new URLSearchParams(location.search);
-if (params.get('lang') != null) {
-    lang = params.get('lang');
-} else {
-    if(getCookie('lang') != '') {
-        lang = getCookie('lang');
-    }
-}
 
 if (params.get('wantToCreate') != null) {
     wantToCreate = params.get('wantToCreate');
@@ -37,37 +27,8 @@ if (params.get('wantToCreate') != null) {
     }
 }
 
-function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i <ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-      }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-}
-
-const setError = (input, message) => {
-    const newPara = document.createElement('p');
-    newPara.innerText = message;
-    newPara.setAttribute("class", 'error');
-
-    parent = input.parentElement;
-    parent.appendChild(newPara);
-};
-
-const setSuccess = (input) => {
-    input.innerText = '';
-};
-
 const sendDataToServer = async (formData) => {
-    const response = await fetch('login.php', {
+    const response = await fetch('./login.php', {
         method: 'POST',
         body: formData
     })
@@ -76,15 +37,6 @@ const sendDataToServer = async (formData) => {
     })
     return response;
 };
-
-const validateEmail = (email) => {
-    return String(email)
-        .toLowerCase()
-        .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
-};
-  
 
 const verifyCreate = async () => {
     let error = 0;
@@ -100,53 +52,49 @@ const verifyCreate = async () => {
 
     if (usernameValue === '') {
         setError(username, trad[lang].usernameVoid);
-    } else {
-        setSuccess(username);
+        error =1;
     }
 
     if (emailValue === '') {
         setError(email, trad[lang].emailVoid);
-    } else {
-        setSuccess(email);
+        error =1;
     }
 
     if (passwordValue === '') {
         setError(password, trad[lang].passwordVoid);
-    } else {
-        setSuccess(password);
+        error =1;
     }
 
     if (passwordConfirmationValue === '') {
         setError(passwordConfirmation, trad[lang].passwordConfVoid);
-    } else {    
-        setSuccess(passwordConfirmation);
+        error =1;
     }
 
     if (passwordValue !== passwordConfirmationValue) {
         setError(passwordConfirmation, trad[lang].passwordNotMatch);
-    } else {
-        setSuccess(passwordConfirmation);
+        error =1;
     }
 
     if (!validateEmail(emailValue)) {
         setError(email, trad[lang].emailNotValid);
-    } else {
-        setSuccess(email);
+        error =1;
     }
 
-    const formData = new FormData();
-    formData.append('username', usernameValue);
-    formData.append('email', emailValue);
-    formData.append('password', passwordValue);
-    formData.append('confirmPassword', passwordConfirmationValue);
+    if (error == 0) {
+        const formData = new FormData();
+        formData.append('username', usernameValue);
+        formData.append('email', emailValue);
+        formData.append('password', passwordValue);
+        formData.append('confirmPassword', passwordConfirmationValue);
+    
+        await sendDataToServer(formData);
 
-    await sendDataToServer(formData);
-
-    location.reload();
-
+        location.replace("/login.php?&wantToCreate=0");
+    }
 }
 
 const verifyLogin = async () => {
+    let error = 0;
     const email = document.getElementById('email');
     const password = document.getElementById('password');
 
@@ -155,23 +103,23 @@ const verifyLogin = async () => {
 
     if (emailValue === '') {
         setError(email, trad[lang].emailVoid);
-    } else {
-        setSuccess(email);
+        error = 1;
     }
 
     if (passwordValue === '') {
         setError(password, trad[lang].passwordVoid);
-    } else {
-        setSuccess(password);
+        error = 1;
     }
 
-    const formData = new FormData();
-    formData.append('email', emailValue);
-    formData.append('password', passwordValue);
+    if (error == 0) {
+        const formData = new FormData();
+        formData.append('email', emailValue);
+        formData.append('password', passwordValue);
+    
+        await sendDataToServer(formData);
 
-    await sendDataToServer(formData);
-
-    location.reload();
+        location.replace("/account.php");
+    }
 }
 
 const form = document.getElementById('form-login');

@@ -29,6 +29,22 @@ $trad = [
         "comments" => "Last comments",
         "notes" => "Last notes",
         "favorite" => "Favorite"
+    ],
+    "admin" => [
+        "article-creator" => [
+            "title" => "Title",
+            "titleEn" => "Title in English",
+            "article" => "Article",
+            "articleEn" => "Article in English",
+            "category" => "Category",
+            "style" => "Style",
+            "madeBy" => "Made by",
+            "link" => "Link",
+            "linkCreator" => "Link of the creator",
+            "date" => "Date",
+            "thumbnail" => "Thumbnail (maximum size : 2mo)",
+            "create" => "Create"
+        ]
     ]
 ]
 ?>

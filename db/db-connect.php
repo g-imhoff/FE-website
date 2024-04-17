@@ -65,7 +65,6 @@ class Database {
         }
     
         if ($result !== NULL) {
-    
             if ($result['password'] == $password) {
                 $_SESSION['email'] = $result['email'];
                 $_SESSION['username'] = $result['username'];
@@ -92,10 +91,10 @@ class Database {
         return $result["admin"];
     }
 
-    public function checkAccountExist($username, $email) {
+    public function checkAccountExist($usernameEmail) {
         $conn = $this->pdo;
         $sql = $conn->prepare("SELECT * FROM users WHERE username = ? OR email = ?");
-        $sql->execute([$username, $email]);
+        $sql->execute([$usernameEmail, $usernameEmail]);
         $row = $sql->fetch();
 
         if (isset($row['username']) && isset($row['email'])) {
@@ -126,14 +125,29 @@ if (!(isset($_COOKIE['username']))) {
 }
 
 if (isset($_COOKIE['username'])) {
-    if(!($db->checkAccountExist($_COOKIE['username'], $_COOKIE['email']))) {
+    if(!($db->checkAccountExist($_COOKIE['username']))) {
         unset($_COOKIE['username']);
         unset($_COOKIE['email']);
     }
 }
 
 if (isset($_SESSION['username'])) {
-    if(!($db->checkAccountExist($_SESSION['username'], $_SESSION['email']))) {
+    if(!($db->checkAccountExist($_SESSION['username']))) {
+        session_destroy();
+        unset($_SESSION['username']);
+        unset($_SESSION['email']);
+    }
+}
+
+if (isset($_COOKIE['email'])) {
+    if(!($db->checkAccountExist($_COOKIE['email']))) {
+        unset($_COOKIE['username']);
+        unset($_COOKIE['email']);
+    }
+}
+
+if (isset($_SESSION['email'])) {
+    if(!($db->checkAccountExist($_SESSION['email']))) {
         session_destroy();
         unset($_SESSION['username']);
         unset($_SESSION['email']);

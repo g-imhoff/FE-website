@@ -1,0 +1,14 @@
+section {
+    form {
+        button {
+            p {
+                color : var(--white);
+            }
+        }
+        
+        p {
+            color : var(--red);
+            font-family : var(--paraFont);
+        }
+    }
+}

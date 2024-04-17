@@ -23,12 +23,12 @@
             <p><?php echo $_COOKIE["email"]; ?></p>
 
             <?php if ($db->verifyAdmin($_COOKIE["username"]) == 1) { ?>
-                <a href="/admin/admin.php"> ADMIN PAGE </a>
+                <a href="/admin/admin.php"><?php echo $trad['account']['admin'];?></a>
             <?php } ?>
         </article>
 
         <article class="second-grid">
-                <button onclick="logout()">Logout</button>
+                <button onclick="logout()"><?php echo $trad['account']['logout']; ?></button>
         </article>
     </main>
 </body>

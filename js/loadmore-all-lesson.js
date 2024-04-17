@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var loadMoreBtn = document.getElementById('loadMore');
 
     loadMoreBtn.addEventListener('click', function() {
-        number += 5;
+        number += 2;
         var send = '/footer/loadmore-add.php?number=' + number;
         var xhr = new XMLHttpRequest();
         xhr.open('GET', send, true);

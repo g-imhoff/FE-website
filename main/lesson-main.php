@@ -42,7 +42,17 @@ if($result !== false) {
 
             <section>
                 <hgroup>
-                    <h1><?php echo $title;?></h1>
+                    <h1>
+                        <?php 
+                        
+                            if($lang === 'fr') {
+                                echo $title;
+                            } else {
+                                echo $titleEn;
+                            }
+
+                        ?>
+                    </h1>
                     <h2>Style : <?php echo $style;?></h2>
                     <h2><?php echo $trad['lesson']['category'] . ' : ';?>
                         <?php 

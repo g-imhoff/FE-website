@@ -28,7 +28,9 @@ $trad = [
         "profil" => "Profile",
         "comments" => "Last comments",
         "notes" => "Last notes",
-        "favorite" => "Favorite"
+        "favorite" => "Favorite",
+        "admin" => "Administration page",
+        "logout" => "Logout"
     ],
     "admin" => [
         "article-creator" => [

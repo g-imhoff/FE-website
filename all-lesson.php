@@ -21,5 +21,9 @@
         <?php
             include_once "./template/header.php";
         ?>
+
+        <?php 
+            include_once "./main/all-lesson-main.php";
+        ?>
     </body>
 </html>

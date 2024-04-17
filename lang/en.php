@@ -50,6 +50,9 @@ $trad = [
     "lesson" => [
         "madeBy" => "Made by",
         "category" => "Category"
+    ], 
+    "all-lesson" => [
+        "start" => "Start the lesson"
     ]
 ]
 ?>

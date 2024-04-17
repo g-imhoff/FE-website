@@ -3,7 +3,7 @@
 $db = new Database();
 $coon = $db->pdo;
 
-$query = $coon->prepare("SELECT title, titleEnglish, link, id_video FROM article ORDER BY id_video DESC LIMIT 1");
+$query = $coon->prepare("SELECT title, titleEnglish, link, id_video FROM article WHERE date || ' 18:00:00' < datetime('now', '+2 hours') ORDER BY date DESC LIMIT 1");
 $query->execute();
 $article = $query->fetch();
 
@@ -31,7 +31,7 @@ $article = $query->fetch();
             </div>
 
             <div class = "video-container">
-                <iframe class="youtube-video" src="<?php echo $article['link'];?>" 
+                <iframe class="youtube-video" src="<?php echo 'https://www.youtube.com/embed/' . $article['link'];?>" 
 
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>

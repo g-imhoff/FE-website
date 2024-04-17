@@ -5,6 +5,7 @@ trad = {
         "articleVoid": "Article cannot be blank",
         "articleEnVoid": "Article in English cannot be blank",
         "categoryVoid": "Category cannot be blank",
+        "categoryEnVoid": "Category in English cannot be blank",
         "styleVoid": "Style cannot be blank",
         "madeByVoid": "Made by cannot be blank",
         "linkVoid": "Link cannot be blank",
@@ -12,7 +13,15 @@ trad = {
         "dateVoid": "You have to set a date",
         "thumbnailVoid": "You have to set an image",
         "format": "The format of the image must be jpeg or png",
-        "size": "The size of the image must be less than 2MB"
+        "size": "The size of the image must be less than 2MB",
+        "titleTooLong": "The title cannot exceed 128 characters",
+        "titleEnTooLong": "The title in English cannot exceed 128 characters",
+        "categoryTooLong": "The category cannot exceed 64 characters",
+        "categoryEnTooLong": "The category in English cannot exceed 64 characters",
+        "styleTooLong": "The style cannot exceed 64 characters",
+        "madeByTooLong": "Made by cannot exceed 64 characters",
+        "linkTooLong": "The link cannot exceed 512 characters",
+        "linkCreatorTooLong": "The link creator cannot exceed 512 characters"
     },
     "fr": {
         "titleVoid": "Le titre ne peut pas être vide",
@@ -20,6 +29,7 @@ trad = {
         "articleVoid": "L'article ne peut pas être vide",
         "articleEnVoid": "L'article en anglais ne peut pas être vide",
         "categoryVoid": "La catégorie ne peut pas être vide",
+        "categoryEnVoid": "La catégorie en anglais ne peut pas être vide",
         "styleVoid": "Le style ne peut pas être vide",
         "madeByVoid": "Fabriqué par ne peut pas être vide",
         "linkVoid": "Le lien ne peut pas être vide",
@@ -27,7 +37,15 @@ trad = {
         "dateVoid": "Tu dois mettre une date",
         "thumbnailVoid": "Tu dois mettre une image",
         "format": "Le format de l'image doit être jpeg ou png",
-        "size": "La taille de l'image doit être inférieure à 2MB"
+        "size": "La taille de l'image doit être inférieure à 2MB", 
+        "titleTooLong": "Le titre ne peut pas dépasser 128 caractères",
+        "titleEnTooLong": "Le titre en anglais ne peut pas dépasser 128 caractères",
+        "categoryTooLong": "La catégorie ne peut pas dépasser 64 caractères",
+        "categoryEnTooLong": "La catégorie en anglais ne peut pas dépasser 64 caractères",
+        "styleTooLong": "Le style ne peut pas dépasser 64 caractères",
+        "madeByTooLong": "Fabriqué par ne peut pas dépasser 64 caractères",
+        "linkTooLong": "Le lien ne peut pas dépasser 512 caractères",
+        "linkCreatorTooLong": "Le lien du créateur ne peut pas dépasser 512 caractères"
     }
 }
 
@@ -66,6 +84,7 @@ const verifyCreate = async () => {
     const article = document.getElementById('article');
     const articleEn = document.getElementById('articleEn');
     const category = document.getElementById('category');
+    const categoryEn = document.getElementById('categoryEn');
     const style = document.getElementById('style');
     const madeBy = document.getElementById('madeBy');
     const link = document.getElementById('link');
@@ -78,11 +97,14 @@ const verifyCreate = async () => {
     const articleValue = article.value.trim();
     const articleEnValue = articleEn.value.trim();
     const categoryValue = category.value.trim();
+    const categoryEnValue = categoryEn.value.trim();
     const styleValue = style.value.trim();
     const madeByValue = madeBy.value.trim();
     const linkValue = link.value.trim();
     const linkCreatorValue = linkCreator.value.trim();
     const dateValue = date.value;
+
+    console.log(thumbnail.files[0].type);
 
     if (titleValue === '') {
         setError(title, trad[lang].titleVoid);
@@ -121,6 +143,16 @@ const verifyCreate = async () => {
 
     if (category.length > 64) {
         setError(category, trad[lang].categoryTooLong);
+        error =1;
+    }
+
+    if (categoryEnValue === '') {
+        setError(category, trad[lang].categoryEnVoid);
+        error =1;
+    }
+
+    if (categoryEn.length > 64) {
+        setError(category, trad[lang].categoryEnTooLong);
         error =1;
     }
 
@@ -173,7 +205,7 @@ const verifyCreate = async () => {
         setError(thumbnail, trad[lang].thumbnailVoid);
         error =1;
     } else {
-        if (thumbnail.files[0].type != 'image/jpeg' && thumbnail.type != 'image/png') {
+        if (thumbnail.files[0].type != 'image/jpeg' && thumbnail.files[0].type != 'image/png') {
             setError(thumbnail, trad[lang].format);
             error =1;
         }
@@ -191,6 +223,7 @@ const verifyCreate = async () => {
         formData.append('article', articleValue);
         formData.append('articleEn', articleEnValue);
         formData.append('category', categoryValue);
+        formData.append('categoryEn', categoryEnValue);
         formData.append('style', styleValue);
         formData.append('madeBy', madeByValue);
         formData.append('link', linkValue);

@@ -10,15 +10,7 @@ class Database {
     public function createUser($email, $username, $password, $confirmPassword) {
         $conn = $this->pdo;
         global $trad;
-    
-        if ($password !== $confirmPassword) {
-            return $trad["login"]["passNoMatch"];
-        }
-    
-        if (!(filter_var($email, FILTER_VALIDATE_EMAIL))) {
-            return $trad["login"]["emailInvalid"];
-        }
-    
+
         $queryVerifyEmail = $conn->prepare("SELECT id FROM `users` WHERE `email` = ?"); 
     
         if ($queryVerifyEmail->execute([$email])) {
@@ -133,7 +125,6 @@ if (isset($_COOKIE['username'])) {
 
 if (isset($_SESSION['username'])) {
     if(!($db->checkAccountExist($_SESSION['username']))) {
-        session_destroy();
         unset($_SESSION['username']);
         unset($_SESSION['email']);
     }
@@ -148,7 +139,6 @@ if (isset($_COOKIE['email'])) {
 
 if (isset($_SESSION['email'])) {
     if(!($db->checkAccountExist($_SESSION['email']))) {
-        session_destroy();
         unset($_SESSION['username']);
         unset($_SESSION['email']);
     }

@@ -38,6 +38,7 @@ $trad = [
             "article" => "Article",
             "articleEn" => "Article en anglais",
             "category" => "Catégorie",
+            "categoryEn" => "Catégorie en anglais",
             "style" => "Style",
             "madeBy" => "Fait par",
             "link" => "Lien",
@@ -48,7 +49,8 @@ $trad = [
         ]
     ], 
     "lesson" => [
-        "madeBy" => "Fait par"
+        "madeBy" => "Fait par",
+        "category" => "Catégorie"
     ]
 ]
 

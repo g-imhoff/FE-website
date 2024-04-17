@@ -88,8 +88,8 @@ const verifyCreate = async () => {
         formData.append('confirmPassword', passwordConfirmationValue);
     
         await sendDataToServer(formData);
-
-        location.replace("/login.php?&wantToCreate=0");
+        
+        location.reload();
     }
 }
 
@@ -118,7 +118,7 @@ const verifyLogin = async () => {
     
         await sendDataToServer(formData);
 
-        location.replace("/account.php");
+        location.reload();
     }
 }
 

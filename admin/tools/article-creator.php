@@ -1,11 +1,11 @@
 <?php
 
-function sendArticle($title, $titleEn, $article, $articleEn, $category, $style, $madeBy, $link, $linkCreator, $date, $thumbnail) {
+function sendArticle($title, $titleEn, $article, $articleEn, $category, $categoryEn, $style, $madeBy, $link, $linkCreator, $date, $thumbnail) {
     $db = new Database();
     $coon = $db->pdo;
 
-    $query = $coon->prepare("INSERT INTO article (title, titleEnglish, article, articleEnglish, categorie, style, madeBy, link, creatorLink, date, thumbnail) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    if ($query->execute([$title, $titleEn, $article, $articleEn, $category, $style, $madeBy, $link, $linkCreator, $date, $thumbnail])) {
+    $query = $coon->prepare("INSERT INTO article (title, titleEnglish, article, articleEnglish, categorie, categorieEnglish, style, madeBy, link, creatorLink, date, thumbnail) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    if ($query->execute([$title, $titleEn, $article, $articleEn, $category, $categoryEn, $style, $madeBy, $link, $linkCreator, $date, $thumbnail])) {
         return "Success";
     } else {
         return "Error: " . $sql . "<br>" . $conn->error;
@@ -13,7 +13,7 @@ function sendArticle($title, $titleEn, $article, $articleEn, $category, $style, 
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $error = sendArticle($_POST['title'], $_POST['titleEn'], $_POST['article'], $_POST['articleEn'], $_POST['category'], $_POST['style'], $_POST['madeBy'], $_POST['link'], $_POST['linkCreator'], $_POST['date'], $_POST['thumbnail']);
+    $error = sendArticle($_POST['title'], $_POST['titleEn'], $_POST['article'], $_POST['articleEn'], $_POST['category'], $_POST['categoryEn'], $_POST['style'], $_POST['madeBy'], $_POST['link'], $_POST['linkCreator'], $_POST['date'], $_POST['thumbnail']);
 }
 
 ?>
@@ -45,6 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <label for=""><?php echo $trad['admin']['article-creator']['category'] ?> : </label>
             <input type="text" id="category" name="category">
+
+            <label for=""><?php echo $trad['admin']['article-creator']['categoryEn'] ?> : </label>
+            <input type="text" id="categoryEn" name="categoryEn">
 
             <label for=""><?php echo $trad['admin']['article-creator']['style'] ?> : </label>
             <input type="text" id="style" name="style">

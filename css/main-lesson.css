@@ -8,6 +8,7 @@ main {
         padding-top : 20px;
         font-family: var(--titleFont);
         color : var(--white);
+        font-size: clamp(15px, 2vw, 30px);
     }
 
     article {
@@ -33,12 +34,12 @@ main {
                 h2 {
                     padding-top : 5px;
                     font-family: var(--subTitleFont);
-                    font-size: 14px;
+                    font-size: clamp(12px, 1.5vw, 20px);
                     color : var(--greyWhite);
                 }
 
                 h3 {
-                    font-size : 12px;
+                    font-size : clamp(11px, 1.2vw, 15px);
                     font-family : var(--paraFont);
                     a {
                         text-decoration : none;
@@ -55,7 +56,7 @@ main {
         display : block;
 
         p {
-            font-size : 12px;
+            font-size : clamp(11px, 1.2vw, 15px);
             padding-top : 20px;
             font-family: var(--paraFont);
             color: var(--white);

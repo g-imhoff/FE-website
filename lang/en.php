@@ -37,6 +37,7 @@ $trad = [
             "article" => "Article",
             "articleEn" => "Article in English",
             "category" => "Category",
+            "categoryEn" => "Category in English",
             "style" => "Style",
             "madeBy" => "Made by",
             "link" => "Link",
@@ -45,6 +46,10 @@ $trad = [
             "thumbnail" => "Thumbnail (maximum size : 2mo)",
             "create" => "Create"
         ]
+    ], 
+    "lesson" => [
+        "madeBy" => "Made by",
+        "category" => "Category"
     ]
 ]
 ?>

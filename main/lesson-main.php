@@ -9,6 +9,7 @@ if($result !== false) {
     $title = $result['title'];
     $article = $result['article'];
     $categorie = $result['categorie'];
+    $categorieEn = $result['categorieEnglish'];
     $style = $result['style'];
     $madeBy = $result['madeBy'];
     $link = $result['link'];
@@ -29,8 +30,10 @@ if($result !== false) {
 <body>
     <main>
         <article>
-            <section>
-                <?php echo '<img src="'. $thumbnail .'"/>';?>
+            <section> 
+                <a target="_blank" href="<?php echo 'https://www.youtube.com/watch?v=' . $link; ?>">
+                    <?php echo '<img src="'. $thumbnail .'"/>';?>
+                </a>
             </section>
 
             <section>
@@ -40,8 +43,19 @@ if($result !== false) {
             <section>
                 <hgroup>
                     <h1><?php echo $title;?></h1>
-                    <h2><?php echo $style;?>, <?php echo $categorie ?></h2>
-                    <h3><a href="<?php echo $link;?>"><?php echo $trad['lesson']['madeBy'] . ' ' . $madeBy;?></a></h3>
+                    <h2>Style : <?php echo $style;?></h2>
+                    <h2><?php echo $trad['lesson']['category'] . ' : ';?>
+                        <?php 
+                        
+                            if($lang === 'fr') {
+                                echo $categorie;
+                            } else {
+                                echo $categorieEn;
+                            }
+
+                        ?>
+                    </h2>
+                    <h3><a target="_blank" href="<?php echo $link;?>"><?php echo $trad['lesson']['madeBy'] . ' ' . $madeBy;?></a></h3>
                 </hgroup>
             </section>
 

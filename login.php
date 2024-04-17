@@ -1,6 +1,6 @@
 <?php
     require_once './lang/get-lang.php';
-    include_once './db/db-connect.php';
+    require_once './db/db-connect.php';
 ?> 
 
 <?php
@@ -14,6 +14,18 @@ if(isset($_GET['wantToCreate'])) {
         $wantToCreate = $_COOKIE['wantToCreate'];
     }
 }
+
+if (isset($_COOKIE['error-create-account'])) {
+    if($_COOKIE['error-create-account'] === 'Success') {
+        header('Location: /login.php?wantToCreate=0');
+    }
+}
+
+if (isset($_COOKIE['error-login-account'])) {
+    if($_COOKIE['error-login-account'] === 'Success') {
+        header('Location: /account.php');
+    }
+}
 ?> 
 
 <?php 
@@ -22,13 +34,20 @@ $db = new Database();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($wantToCreate == 1) {
         $error = $db->createUser($_POST['email'], $_POST['username'], $_POST['password'], $_POST['confirmPassword']);
+        setcookie('error-create-account', $error, time() + 3, '/');
+
+        if ($error !== "Success") {
+            setcookie('email-error-create', $_POST['email'], time() + 3, '/');
+            setcookie('username-error-create', $_POST['username'], time() + 3, '/');
+        }
     } else {
         $error = $db->logUser($_POST['email'], $_POST['password']);
-    }
-}
+        setcookie('error-login-account', $error, time() + 3, '/');
 
-if (isset($_SESSION["username"]) || isset($_COOKIE["username"])) {
-    header("Location: /account.php");
+        if ($error !== "Success") {
+            setcookie('email-error-login', $_POST['email'], time() + 3, '/');
+        }
+    }
 }
 
 ?>
@@ -38,7 +57,7 @@ if (isset($_SESSION["username"]) || isset($_COOKIE["username"])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lesson</title>
+        <title>Login</title>
 
         <!-- CSS -->        
         <link rel="stylesheet" href="/css/base.css">
@@ -61,11 +80,6 @@ if (isset($_SESSION["username"]) || isset($_COOKIE["username"])) {
 
         <?php
             include_once "./footer/login-footer.php";
-        ?>
-
-        <?php
-            echo $_SESSION['test'];
-        ?>
-        
+        ?> 
     </body>
 </html>

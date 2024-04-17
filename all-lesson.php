@@ -1,22 +1,14 @@
 <?php
     require_once './lang/get-lang.php';
     require_once './db/db-connect.php';
-?>  
-
-<?php
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-    } else {
-        header('Location: /all-lesson.php');
-    }
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lesson</title>
+        <title>All lesson</title>
 
         <!-- CSS -->        
         <link rel="stylesheet" href="/css/base.css">
@@ -28,10 +20,6 @@
     <body>
         <?php
             include_once "./template/header.php";
-        ?>
-
-        <?php
-            include_once './main/lesson-main.php'
         ?>
     </body>
 </html>

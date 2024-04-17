@@ -1,55 +1,56 @@
 main {
-    display : flex;
-    flex-direction : column;
-    align-items : center;
-    justify-content: center;
-    width : 100vw;
-    height : auto;
-    padding-top: 20px;
-
-    section {
+    article {
         display : flex;
         flex-direction : column;
         align-items : center;
         justify-content: center;
-        width: clamp(300px, 80%, 900px);
+        width : 100vw;
         height : auto;
-        background-color: var(--greyBlack);
-        margin : clamp(15px, 3vw, 30px);
-        border-radius: 20px;
 
-        h1 {
-            color: var(--white);
-            text-align: center;
-            margin: 20px;
-            font-family: var(--titleFont);
-            font-size : clamp(0.7rem, 3vw, 1rem);
-        }
-
-        .youtube-video {
-            aspect-ratio: 16 / 9;
-            width: 100%;
-            padding-right : 5%;
-            padding-left : 5%;
-        }
-
-        a {
-            display :flex; 
+        section {
+            display : flex;
+            flex-direction : column;
             align-items : center;
             justify-content: center;
-            height: clamp(25px, 3vw, 35px);
-            width : clamp(70px, 35%, 300px);
-            margin : 20px;
-            background-color : var(--primaryBlueColor);
-            border-radius : 20px;
+            width: clamp(300px, 80%, 900px);
+            height : auto;
+            background-color: var(--greyBlack);
+            margin : clamp(15px, 3vw, 30px);
+            border-radius: 20px;
 
-            p {
-                color : var(--white);
-                font-family: var(--paraFont);
-                font-size : clamp(0.5rem, 1.5vw, 1rem);
+            h1 {
+                color: var(--white);
+                text-align: center;
+                margin: 20px;
+                font-family: var(--titleFont);
+                font-size : clamp(0.7rem, 3vw, 1rem);
             }
+
+            .youtube-video {
+                aspect-ratio: 16 / 9;
+                width: 100%;
+                padding-right : 5%;
+                padding-left : 5%;
+            }
+
+            a {
+                display :flex; 
+                align-items : center;
+                justify-content: center;
+                height: clamp(25px, 3vw, 35px);
+                width : clamp(70px, 35%, 300px);
+                margin : 20px;
+                background-color : var(--primaryBlueColor);
+                border-radius : 20px;
+
+                p {
+                    color : var(--white);
+                    font-family: var(--paraFont);
+                    font-size : clamp(0.5rem, 1.5vw, 1rem);
+                }
+            }
+
+
         }
-
-
     }
 }

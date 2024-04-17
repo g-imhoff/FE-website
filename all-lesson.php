@@ -1,6 +1,7 @@
 <?php
     require_once './lang/get-lang.php';
     require_once './db/db-connect.php';
+    require_once './footer/loadmore-function.php';
 ?> 
 
 <!DOCTYPE html>
@@ -24,6 +25,10 @@
 
         <?php 
             include_once "./main/all-lesson-main.php";
+        ?>
+
+        <?php
+            include_once './footer/loadmore-footer.php';
         ?>
     </body>
 </html>

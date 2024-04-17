@@ -52,7 +52,8 @@ $trad = [
         "category" => "Category"
     ], 
     "all-lesson" => [
-        "start" => "Start the lesson"
+        "start" => "Start the lesson",
+        "loadMore" => "Load more"
     ]
 ]
 ?>

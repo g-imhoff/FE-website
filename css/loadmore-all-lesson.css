@@ -1,1 +1,21 @@
-    
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width : 100vw;
+    height : auto;
+
+    button {
+        border : none;
+        height: clamp(25px, 3vw, 35px);
+        width: clamp(70px, 35%, 300px);
+        margin-bottom: 20px;
+        border-radius: 20px;
+    }
+
+    p {
+        color: var(--black);
+        font-family: var(--paraFont);
+        font-size: clamp(0.5rem, 1.5vw, 1rem);
+    }
+}

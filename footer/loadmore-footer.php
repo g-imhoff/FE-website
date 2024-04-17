@@ -4,5 +4,7 @@
 </head>
 
 <body>
-    
+    <footer>
+        <button id="loadMore" type="button"><p><?php echo $trad['all-lesson']['loadMore']; ?></p></button>
+    </footer>
 </body>

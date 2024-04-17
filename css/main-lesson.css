@@ -4,6 +4,12 @@ main {
     align-items: center;
     width: 100vw;
 
+    h1 {
+        padding-top : 20px;
+        font-family: var(--titleFont);
+        color : var(--white);
+    }
+
     article {
         width: 80vw;
         section {
@@ -23,11 +29,6 @@ main {
 
             hgroup {
                 text-align: center;
-                h1 {
-                    padding-top : 20px;
-                    font-family: var(--titleFont);
-                    color : var(--white);
-                }
     
                 h2 {
                     padding-top : 5px;
@@ -35,8 +36,29 @@ main {
                     font-size: 14px;
                     color : var(--greyWhite);
                 }
+
+                h3 {
+                    font-size : 12px;
+                    font-family : var(--paraFont);
+                    a {
+                        text-decoration : none;
+                        color : var(--grey);
+                    }
+                }
+
             }
 
+        }
+    }
+
+    .article-section {
+        display : block;
+
+        p {
+            font-size : 12px;
+            padding-top : 20px;
+            font-family: var(--paraFont);
+            color: var(--white);
         }
     }
 }

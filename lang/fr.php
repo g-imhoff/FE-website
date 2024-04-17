@@ -46,6 +46,9 @@ $trad = [
             "thumbnail" => "Miniature (taille maximum : 2mo)",
             "create" => "Créer"
         ]
+    ], 
+    "lesson" => [
+        "madeBy" => "Fait par"
     ]
 ]
 

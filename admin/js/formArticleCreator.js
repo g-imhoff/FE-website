@@ -42,6 +42,23 @@ const sendDataToServer = async (formData) => {
     return response;
 };
 
+
+var image;
+
+const form = document.getElementById('form-article-creator');
+const imageInput = document.getElementById('thumbnail');
+
+imageInput.addEventListener('change', () => {
+    const file = imageInput.files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener('load', () => {
+        image = reader.result;
+    });
+
+    reader.readAsDataURL(file);
+});
+
 const verifyCreate = async () => {
     let error = 0;
     const title = document.getElementById('title');
@@ -179,16 +196,13 @@ const verifyCreate = async () => {
         formData.append('link', linkValue);
         formData.append('linkCreator', linkCreatorValue);
         formData.append('date', dateValue);
-        formData.append('thumbnail', thumbnail.files[0]);
+        formData.append('thumbnail', image);
 
         await sendDataToServer(formData);
 
         location.reload();
     }
 }
-
-
-const form = document.getElementById('form-article-creator');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();

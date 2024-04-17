@@ -58,9 +58,18 @@ class Database {
     
         if ($result !== NULL) {
             if ($result['password'] == $password) {
-                $_SESSION['email'] = $result['email'];
-                $_SESSION['username'] = $result['username'];
-    
+                setcookie('email', $result['email'], [
+                    'expires' => time() + 3600 * 24 * 7, // Exemple d'expiration dans une heure
+                    'path' => '/', // Chemin pour lequel le cookie est valide
+                    'samesite' => 'Strict' // Définit l'attribut SameSite à Strict
+                ]);
+
+                setcookie('username', $result['username'], [
+                    'expires' => time() + 3600 * 24 * 7, // Exemple d'expiration dans une heure
+                    'path' => '/', // Chemin pour lequel le cookie est valide
+                    'samesite' => 'Strict' // Définit l'attribut SameSite à Strict
+                ]);
+                
                 return "Success";
             } else {
                 return "Password is incorrect";
@@ -100,33 +109,10 @@ class Database {
 
 $db = new Database();
 
-if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-if (!(isset($_COOKIE['username']))) {
-    if (isset($_SESSION['username'])) {
-        setcookie('username', $_SESSION['username'], time() + 3600 * 24 * 7, '/'); // le cookie reste 7 jours
-        setcookie('email', $_SESSION['email'], time() + 3600 * 24 * 7, '/'); // le cookie reste 7 jours
-    }
-} else if (!(isset($_SESSION['username']))) {
-    if (isset($_COOKIE['username'])) {
-        $_SESSION['username'] = $_COOKIE['username'];
-        $_SESSION['email'] = $_COOKIE['email'];
-    }
-}
-
 if (isset($_COOKIE['username'])) {
     if(!($db->checkAccountExist($_COOKIE['username']))) {
         unset($_COOKIE['username']);
         unset($_COOKIE['email']);
-    }
-}
-
-if (isset($_SESSION['username'])) {
-    if(!($db->checkAccountExist($_SESSION['username']))) {
-        unset($_SESSION['username']);
-        unset($_SESSION['email']);
     }
 }
 
@@ -137,11 +123,5 @@ if (isset($_COOKIE['email'])) {
     }
 }
 
-if (isset($_SESSION['email'])) {
-    if(!($db->checkAccountExist($_SESSION['email']))) {
-        unset($_SESSION['username']);
-        unset($_SESSION['email']);
-    }
-}
 
 ?>

@@ -18,7 +18,7 @@
             <ul>
                 <li><a href="/all-lesson.php"><p><?php echo $trad['Header']['Lesson'];?></p></a></li>
 
-                <?php if (isset($_SESSION['username'])) { ?>
+                <?php if (isset($_COOKIE['username'])) { ?>
                     <li><a href="/account.php"><p><?php echo $trad['Header']['Account'];?></p></a></li>
                 <?php } else { ?>
                     <li><a href="/login.php"><p><?php echo $trad['Header']['Login'];?></p></a></li>
@@ -66,7 +66,7 @@
             <ul>
                 <li><a href="/lesson.php"><p><?php echo $trad['Header']['Lesson'];?></p></a></li>
                 
-                <?php if (isset($_SESSION['username'])) { ?>
+                <?php if (isset($_COOKIE['username'])) { ?>
                     <li><a href="/account.php"><p><?php echo $trad['Header']['Account'];?></p></a></li>
                 <?php } else { ?>
                     <li><a href="/login.php"><p><?php echo $trad['Header']['Login'];?></p></a></li>

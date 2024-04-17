@@ -5,7 +5,7 @@
 
 <?php 
     $db = new Database();
-    if ($db->verifyAdmin($_SESSION['username']) != 1) {
+    if ($db->verifyAdmin($_COOKIE['username']) != 1) {
         header("Location: /index.php");
     }
 ?>

@@ -1,6 +1,7 @@
 <?php
     require_once './lang/get-lang.php';
     require_once './db/db-connect.php';
+    require_once('./db/users.php');
 ?> 
 
 <?php
@@ -29,11 +30,11 @@ if (isset($_COOKIE['error-login-account'])) {
 ?> 
 
 <?php 
-$db = new Database();
+$users = new Users();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($wantToCreate == 1) {
-        $error = $db->createUser($_POST['email'], $_POST['username'], $_POST['password'], $_POST['confirmPassword']);
+        $error = $users->createUser($_POST['email'], $_POST['username'], $_POST['password'], $_POST['confirmPassword']);
         setcookie('error-create-account', $error, time() + 3, '/');
 
         if ($error !== "Success") {
@@ -41,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             setcookie('username-error-create', $_POST['username'], time() + 3, '/');
         }
     } else {
-        $error = $db->logUser($_POST['email'], $_POST['password']);
+        $error = $users->logUser($_POST['email'], $_POST['password']);
         setcookie('error-login-account', $error, time() + 3, '/');
 
         if ($error !== "Success") {

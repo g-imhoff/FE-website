@@ -1,7 +1,10 @@
 <?php
     require_once './lang/get-lang.php';
     require_once './db/db-connect.php';
-    require_once './footer/loadmore-function.php';
+    require_once './db/loadmore.php';
+    require_once './db/users.php';
+
+    $l = new LoadMore();
 ?> 
 
 <!DOCTYPE html>

@@ -1,6 +1,7 @@
 <?php
     require_once('../lang/get-lang.php');
     require_once('../db/db-connect.php');
+    require_once('../db/users.php');
 ?>
 
 <?php 
@@ -40,6 +41,9 @@
 
             foreach($tools as $tool) {
                 echo '<button onclick="showClass(\''. $tool["class"] . '\')">' . '<p>' . $tool["name"] . '</p>' . '</button>';
+                foreach ($tool["require"] as $require) {
+                    require_once($require);
+                }
                 include_once($tool["file"]);
             }
 

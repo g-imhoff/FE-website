@@ -1,6 +1,6 @@
 <?php
 $db = new Database();
-$conn = $db->pdo;
+$conn = $db->getPDO();
 $sql = $conn->prepare("SELECT * FROM `article` WHERE id_video = ?");
 $sql->execute([$id]);
 $result = $sql->fetch();

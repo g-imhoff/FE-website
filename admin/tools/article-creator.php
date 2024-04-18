@@ -1,19 +1,8 @@
 <?php
 
-function sendArticle($title, $titleEn, $article, $articleEn, $category, $categoryEn, $style, $madeBy, $link, $linkCreator, $date, $thumbnail) {
-    $db = new Database();
-    $coon = $db->pdo;
-
-    $query = $coon->prepare("INSERT INTO article (title, titleEnglish, article, articleEnglish, categorie, categorieEnglish, style, madeBy, link, creatorLink, date, thumbnail) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    if ($query->execute([$title, $titleEn, $article, $articleEn, $category, $categoryEn, $style, $madeBy, $link, $linkCreator, $date, $thumbnail])) {
-        return "Success";
-    } else {
-        return "Error: " . $sql . "<br>" . $conn->error;
-    }
-}
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $error = sendArticle($_POST['title'], $_POST['titleEn'], $_POST['article'], $_POST['articleEn'], $_POST['category'], $_POST['categoryEn'], $_POST['style'], $_POST['madeBy'], $_POST['link'], $_POST['linkCreator'], $_POST['date'], $_POST['thumbnail']);
+    $article = new ArticleCreator();
+    $error = $article->sendArticle($_POST['title'], $_POST['titleEn'], $_POST['article'], $_POST['articleEn'], $_POST['category'], $_POST['categoryEn'], $_POST['style'], $_POST['madeBy'], $_POST['link'], $_POST['linkCreator'], $_POST['date'], $_POST['thumbnail']);
 }
 
 ?>

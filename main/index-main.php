@@ -1,7 +1,7 @@
 <?php
 
 $db = new Database();
-$coon = $db->pdo;
+$coon = $db->getPDO();
 
 $query = $coon->prepare("SELECT title, titleEnglish, link, id_video FROM article WHERE date || ' 18:00:00' < datetime('now', '+2 hours') ORDER BY date DESC LIMIT 1");
 $query->execute();

@@ -6,7 +6,7 @@
     <main id="resultat">
         <article>
             <?php
-                loadMore(0);
+                $l->getLoadMore(0);
             ?>
         </article>
     </main>

@@ -104,6 +104,17 @@ class Database {
             return false;
         }
     }
+
+    public function createIemeTableTest($i) {
+        $conn = $this->pdo;
+        $query = $conn->prepare("CREATE TABLE IF NOT EXISTS test" . $i . "(id_test INTEGER PRIMARY KEY, test TEXT)");
+        if ($query->execute()) {
+            return "Success";
+        } else {
+            return "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
+    
     
 }
 

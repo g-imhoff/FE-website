@@ -13,8 +13,40 @@ class Users {
         $password = htmlspecialchars($password);
         $confirmPassword = htmlspecialchars($confirmPassword);
 
-        $conn = $this->db->getPDO();
+        $email = trim($email);
+        $username = trim($username);
+        $password = trim($password);
+        $confirmPassword = trim($confirmPassword);
+
         global $trad;
+
+        if (empty($email) || empty($username) || empty($password) || empty($confirmPassword)) {
+            return $trad["login"]["empty"];
+        }
+
+        if (strlen($username) > 50) {
+            return $trad["login"]["userLong"];
+        }
+
+        if (strlen($email) > 255) {
+            return $trad["login"]["emailLong"];
+        }
+
+        if (strlen($password) > 128) {
+            return $trad["login"]["passLong"];
+        }
+
+        //doesnt need to check password confirmation because it needs anyways to be equal to password so < than 255 and not ""
+
+        if (!(filter_var($email, FILTER_VALIDATE_EMAIL))) {
+            return $trad["login"]["emailInvalid"];
+        }
+
+        if ($password !== $confirmPassword) {
+            return $trad["login"]["passNoMatch"];
+        }
+
+        $conn = $this->db->getPDO();
 
         $queryVerifyEmail = $conn->prepare("SELECT id FROM `users` WHERE `email` = ?"); 
     
@@ -52,6 +84,21 @@ class Users {
     public function logUser($email, $password) {
         $email = htmlspecialchars($email);
         $password = htmlspecialchars($password);
+
+        $email = trim($email);
+        $password = trim($password);
+
+        if (empty($email) || empty($password)) {
+            return $trad["login"]["empty"];
+        }
+
+        if (strlen($email) > 255) {
+            return $trad["login"]["emailLong"];
+        }
+
+        if (strlen($password) > 128) {
+            return $trad["login"]["passLong"];
+        }
 
         $conn = $this->db->getPDO();
         

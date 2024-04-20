@@ -53,7 +53,10 @@ $trad = [
             "linkCreator" => "Lien du créateur",
             "date" => "Date",
             "thumbnail" => "Miniature (taille maximum : 2mo)",
-            "create" => "Créer"
+            "create" => "Créer",
+            "empty" => "Veuillez remplir tous les champs", 
+            "titleLong" => "Le titre est trop long",
+            "categoryLong" => "La catégorie est trop longue"
         ]
     ], 
     "lesson" => [

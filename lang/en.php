@@ -52,7 +52,10 @@ $trad = [
             "linkCreator" => "Link of the creator",
             "date" => "Date",
             "thumbnail" => "Thumbnail (maximum size : 2mo)",
-            "create" => "Create"
+            "create" => "Create",
+            "empty" => "Please fill all fields",
+            "titleLong" => "Title is too long",
+            "categoryLong" => "Category is too long"
         ]
     ], 
     "lesson" => [

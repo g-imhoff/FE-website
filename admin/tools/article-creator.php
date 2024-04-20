@@ -20,40 +20,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <h1>Article Creator</h1>
 
         <form id="form-article-creator" action="" method="post">
-            <label><?php echo $trad['admin']['article-creator']['title'] ?> : </label>
+            <label for="title"><?php echo $trad['admin']['article-creator']['title'] ?> : </label>
             <input type="text" id="title" name="title">
 
-            <label><?php echo $trad['admin']['article-creator']['titleEn'] ?> : </label>
+            <label for="titleEn"><?php echo $trad['admin']['article-creator']['titleEn'] ?> : </label>
             <input type="text" id="titleEn" name="titleEn">
 
-            <label><?php echo $trad['admin']['article-creator']['article'] ?> : </label>
+            <label for="article"><?php echo $trad['admin']['article-creator']['article'] ?> : </label>
             <textarea id="article" name="article"></textarea>
 
-            <label><?php echo $trad['admin']['article-creator']['articleEn'] ?> : </label>
+            <label for="articleEn"><?php echo $trad['admin']['article-creator']['articleEn'] ?> : </label>
             <textarea id="articleEn" name="articleEn"></textarea>
 
-            <label for=""><?php echo $trad['admin']['article-creator']['category'] ?> : </label>
+            <label for="category"><?php echo $trad['admin']['article-creator']['category'] ?> : </label>
             <input type="text" id="category" name="category">
 
-            <label for=""><?php echo $trad['admin']['article-creator']['categoryEn'] ?> : </label>
+            <label for="categoryEn"><?php echo $trad['admin']['article-creator']['categoryEn'] ?> : </label>
             <input type="text" id="categoryEn" name="categoryEn">
 
-            <label for=""><?php echo $trad['admin']['article-creator']['style'] ?> : </label>
+            <label for="style"><?php echo $trad['admin']['article-creator']['style'] ?> : </label>
             <input type="text" id="style" name="style">
 
-            <label for=""><?php echo $trad['admin']['article-creator']['madeBy'] ?> : </label>
+            <label for="madeBy"><?php echo $trad['admin']['article-creator']['madeBy'] ?> : </label>
             <input type="text" id="madeBy" name="madeBy">
 
-            <label for=""><?php echo $trad['admin']['article-creator']['link'] ?> : </label>
+            <label for="link"><?php echo $trad['admin']['article-creator']['link'] ?> : </label>
             <input type="text" id="link" name="link">
 
-            <label for=""><?php echo $trad['admin']['article-creator']['linkCreator'] ?> : </label>
+            <label for="linkCreator"><?php echo $trad['admin']['article-creator']['linkCreator'] ?> : </label>
             <input type="text" id="linkCreator" name="linkCreator">
 
-            <label for=""><?php echo $trad['admin']['article-creator']['date'] ?> : </label>
+            <label for="date"><?php echo $trad['admin']['article-creator']['date'] ?> : </label>
             <input type="date" id="date" name="date">
 
-            <label for=""><?php echo $trad['admin']['article-creator']['thumbnail'] ?> : </label>
+            <label for="thumbnail"><?php echo $trad['admin']['article-creator']['thumbnail'] ?> : </label>
             <input type="file" id="thumbnail" name="thumbnail">
 
             <button type="submit" name="submit"><p><?php echo $trad['admin']['article-creator']['create'] ?></p></button>

@@ -61,7 +61,8 @@ $trad = [
     ], 
     "lesson" => [
         "madeBy" => "Fait par",
-        "category" => "Catégorie"
+        "category" => "Catégorie",
+        "thumbnailAlt" => "Ceci est la miniature de la vidéo"
     ], 
     "all-lesson" => [
         "start" => "Commencer la leçon", 

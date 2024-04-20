@@ -12,7 +12,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $lang;?>">
 
     <head>
         <meta charset="UTF-8">

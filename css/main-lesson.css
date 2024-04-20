@@ -21,7 +21,7 @@ main {
                 height: auto;
             }
 
-            p {
+            p, h3 {
                 padding-top : 20px;
                 font-family: var(--subTitleFont);
                 color: var(--grey);

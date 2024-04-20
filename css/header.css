@@ -72,12 +72,12 @@ header {
         border: none;
         background: none;
         
-        p {
-            cursor: pointer;
-            font-family : var(--subTitleFont);
-            color : var(--white);
-            font-size: clamp(1em, 1.2vw, 4em);
-        }
+        
+        cursor: pointer;
+        font-family : var(--subTitleFont);
+        color : var(--white);
+        font-size: clamp(1em, 1.2vw, 4em);
+    
     }
 }
 

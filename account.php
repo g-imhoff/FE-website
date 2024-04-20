@@ -5,7 +5,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $lang;?>">
 
     <head>
         <meta charset="UTF-8">
@@ -27,14 +27,4 @@
     <?php
         include_once "./main/account-main.php"
     ?>
-
-    <p style = "style='white-space:pre-wrap;text-align:center;font:bold 130% sans-serif"><?php echo "Ceci est un texte de test (vous pouvez voir des texte plus contextuel pour la vidéo FAIRE DIFFÉREMENT : Créer en réutilisant pour faire de la SUPERTRAP ou Comment faire un remix SUPERTRAP AMBIENT) 
-Ceci est un texte de test (vous pouvez voir des texte plus contextuel pour la vidéo FAIRE DIFFÉREMENT : Créer en réutilisant pour faire de la SUPERTRAP ou Comment faire un remix SUPERTRAP AMBIENT)
-
-Ceci est un texte de test (vous pouvez voir des texte plus contextuel pour la vidéo FAIRE DIFFÉREMENT : Créer en réutilisant pour faire de la SUPERTRAP ou Comment faire un remix SUPERTRAP AMBIENT)
-
-Ceci est un texte de test (vous pouvez voir des texte plus contextuel pour la vidéo FAIRE DIFFÉREMENT : Créer en réutilisant pour faire de la SUPERTRAP ou Comment faire un remix SUPERTRAP AMBIENT
-
-Ceci est un texte de test (vous pouvez voir des texte plus contextuel pour la vidéo FAIRE DIFFÉREMENT : Créer en réutilisant pour faire de la SUPERTRAP ou Comment faire un remix SUPERTRAP AMBIENT)" ?> &nbsp; hdzqhduizqhdui</p>
-
 </html>

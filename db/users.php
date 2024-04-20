@@ -105,15 +105,15 @@ class Users {
         if ($result !== NULL) {
             if ($result['password'] == $args[1]) {
                 setcookie('email', $result['email'], [
-                    'expires' => time() + 3600 * 24 * 7, // Exemple d'expiration dans une heure
-                    'path' => '/', // Chemin pour lequel le cookie est valide
-                    'samesite' => 'Strict' // Définit l'attribut SameSite à Strict
+                    'expires' => time() + 3600 * 24 * 7, 
+                    'path' => '/',
+                    'samesite' => 'Strict'
                 ]);
 
                 setcookie('username', $result['username'], [
-                    'expires' => time() + 3600 * 24 * 7, // Exemple d'expiration dans une heure
-                    'path' => '/', // Chemin pour lequel le cookie est valide
-                    'samesite' => 'Strict' // Définit l'attribut SameSite à Strict
+                    'expires' => time() + 3600 * 24 * 7,
+                    'path' => '/',
+                    'samesite' => 'Strict'
                 ]);
                 
                 return "Success";

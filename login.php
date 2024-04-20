@@ -9,7 +9,7 @@ $wantToCreate = 0;
 if(isset($_GET['wantToCreate'])) {
     $wantToCreate = $_GET['wantToCreate'];
 
-    setcookie('wantToCreate', $wantToCreate, time() + 3600 * 24 * 7, '/'); // le cookie reste 7 jours
+    setcookie('wantToCreate', $wantToCreate, time() + 3600 * 24, '/');
 } else {
     if (isset($_COOKIE['wantToCreate'])) {
         $wantToCreate = $_COOKIE['wantToCreate'];
@@ -35,18 +35,39 @@ $users = new Users();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($wantToCreate == 1) {
         $error = $users->createUser($_POST['email'], $_POST['username'], $_POST['password'], $_POST['confirmPassword']);
-        setcookie('error-create-account', $error, time() + 3, '/');
+        setcookie('error-create-account', $error, [
+            'expires' => time() + 3, 
+            'path' => '/', 
+            'samesite' => 'Strict'
+        ]);
 
         if ($error !== "Success") {
-            setcookie('email-error-create', $_POST['email'], time() + 3, '/');
-            setcookie('username-error-create', $_POST['username'], time() + 3, '/');
+            setcookie('email-error-create', $_POST['email'], [
+                'expires' => time() + 3, 
+                'path' => '/', 
+                'samesite' => 'Strict' 
+            ]);
+
+            setcookie('username-error-create', $_POST['username'], [
+                'expires' => time() + 3, 
+                'path' => '/', 
+                'samesite' => 'Strict' 
+            ]);
         }
     } else {
         $error = $users->logUser($_POST['email'], $_POST['password']);
-        setcookie('error-login-account', $error, time() + 3, '/');
+        setcookie('error-login-account', $error, [
+            'expires' => time() + 3, 
+            'path' => '/', 
+            'samesite' => 'Strict' 
+        ]);
 
         if ($error !== "Success") {
-            setcookie('email-error-login', $_POST['email'], time() + 3, '/');
+            setcookie('email-error-login', $_POST['email'], [
+                'expires' => time() + 3, 
+                'path' => '/', 
+                'samesite' => 'Strict' 
+            ]);
         }
     }
 }
@@ -54,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $lang;?>">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

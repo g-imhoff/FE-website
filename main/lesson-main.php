@@ -32,7 +32,7 @@ if($result !== false) {
         <article>
             <section> 
                 <a target="_blank" href="<?php echo 'https://www.youtube.com/watch?v=' . $link; ?>">
-                    <?php echo '<img src="'. $thumbnail .'"/>';?>
+                    <?php echo '<img alt="'. $trad["lesson"]["thumbnailAlt"] .'" src="'. $thumbnail .'"/>';?>
                 </a>
             </section>
 

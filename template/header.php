@@ -31,11 +31,13 @@
             <?php
                 foreach ($_GET as $key => $value) {
                     if ($key !== 'lang') {
+                        echo '<label style="display: none;" for="' . htmlspecialchars($key) . '">' . htmlspecialchars($value) . '</label>';
                         echo '<input type="hidden" name="' . htmlspecialchars($key) . '" value="' . htmlspecialchars($value) . '">';
                     }
                 }
             ?>
 
+            <label for="lang" style="display: none;"><?php echo $trad['Header']['Change'];?></label>
             <input type="hidden" name="lang" value="<?php 
                 if($lang == 'fr') {
                     echo 'en';
@@ -43,7 +45,7 @@
                     echo 'fr';
                 }
             ?>">
-            <button type="submit"><p><?php echo htmlspecialchars($trad['Header']['Change']);?></p></button>
+            <button type="submit"><?php echo $trad['Header']['Change'];?></button>
         </form>
 
         <!-- Burger Menu -->
@@ -73,14 +75,17 @@
                 <?php } ?>
 
                 <li>
-                    <form class="form-english" method="GET">
+                    <form class="form-animation form-english form-display">
                         <?php
                             foreach ($_GET as $key => $value) {
                                 if ($key !== 'lang') {
+                                    echo '<label style="display: none;" for="' . htmlspecialchars($key) . '">' . htmlspecialchars($value) . '</label>';
                                     echo '<input type="hidden" name="' . htmlspecialchars($key) . '" value="' . htmlspecialchars($value) . '">';
                                 }
                             }
                         ?>
+
+                        <label for="lang" style="display: none;"><?php echo $trad['Header']['Change'];?></label>
                         <input type="hidden" name="lang" value="<?php 
                             if($lang == 'fr') {
                                 echo 'en';
@@ -88,7 +93,7 @@
                                 echo 'fr';
                             }
                         ?>">
-                        <button type="submit"><p><?php echo htmlspecialchars($trad['Header']['Change']);?></p></button>
+                        <button type="submit"><?php echo $trad['Header']['Change'];?></button>
                     </form>
                 </li>
 

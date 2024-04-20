@@ -22,6 +22,7 @@ la page d'administration est disponible depuis la page account.php
 - Supporte la langue française et anglaise
 - Fonctionnalité Load More pour afficher toutes les lecon depuis la page all-lesson.php
 - Responsive
+- Securiser pour les injections XSS
 
 
 ## Lancer localement

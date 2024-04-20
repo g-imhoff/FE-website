@@ -18,16 +18,21 @@ class LoadMore {
         $result = $query->fetchALL();
     
         foreach ($result as $row) {
-            if ($lang === 'fr') $title = $row['title'];
-            else $title = $row['titleEnglish'];
+            
+
+            if ($lang === 'fr') $title = htmlspecialchars($row['title']);
+            else $title = htmlspecialchars($row['titleEnglish']);
+
+            $link = htmlspecialchars($row['link']);
+            $id_video = htmlspecialchars($row['id_video']);
             echo('
             <section>
                 <h1>
                     ' . $title . '
                 </h1>
-                <iframe class="youtube-video" src="https://www.youtube.com/embed/'. $row['link'] .'"  
+                <iframe class="youtube-video" src="https://www.youtube.com/embed/'. $link .'"  
                     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <a href="/lesson.php?id='. $row['id_video'] .'"><p>' . $trad['all-lesson']['start'] . '</p></a>
+                <a href="/lesson.php?id='. $id_video .'"><p>' . $trad['all-lesson']['start'] . '</p></a>
             </section>');
         }
     }

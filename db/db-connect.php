@@ -22,6 +22,8 @@ class Database {
     }
     
     public function verifyAdmin($username) {
+        $username = htmlspecialchars($username);
+
         $conn = $this->pdo;
         $query = $conn->prepare("SELECT admin FROM users WHERE `username` = ?");
 
@@ -35,6 +37,8 @@ class Database {
     }
 
     public function checkAccountExist($usernameEmail) {
+        $usernameEmail = htmlspecialchars($usernameEmail);
+
         $conn = $this->pdo;
         $sql = $conn->prepare("SELECT * FROM users WHERE username = ? OR email = ?");
         $sql->execute([$usernameEmail, $usernameEmail]);

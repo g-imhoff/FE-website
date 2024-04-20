@@ -6,18 +6,18 @@ $sql->execute([$id]);
 $result = $sql->fetch();
 
 if($result !== false) {
-    $title = $result['title'];
-    $article = $result['article'];
-    $categorie = $result['categorie'];
-    $categorieEn = $result['categorieEnglish'];
-    $style = $result['style'];
-    $madeBy = $result['madeBy'];
-    $link = $result['link'];
-    $creatorLink = $result['creatorLink'];
-    $date = $result['date'];
-    $thumbnail = $result['thumbnail'];
-    $articleEn = $result['articleEnglish'];
-    $titleEn = $result['titleEnglish'];
+    $title = htmlspecialchars($result['title']);
+    $article = htmlspecialchars($result['article']);
+    $categorie = htmlspecialchars($result['categorie']);
+    $categorieEn = htmlspecialchars($result['categorieEnglish']);
+    $style = htmlspecialchars($result['style']);
+    $madeBy = htmlspecialchars($result['madeBy']);
+    $link = htmlspecialchars($result['link']);
+    $creatorLink = htmlspecialchars($result['creatorLink']);
+    $date = htmlspecialchars($result['date']);
+    $thumbnail = htmlspecialchars($result['thumbnail']);
+    $articleEn = htmlspecialchars($result['articleEnglish']);
+    $titleEn = htmlspecialchars($result['titleEnglish']);
 } else {
     header('Location: /all-lesson.php');
 }
@@ -75,9 +75,9 @@ if($result !== false) {
                 <p>
                     <?php
                         if ($lang ==='fr') {
-                            echo $article;
+                            echo nl2br($article);
                         } else {
-                            echo $articleEn;
+                            echo nl2br($articleEn);
                         }
                     ?>
                 </p>

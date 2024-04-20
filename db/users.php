@@ -8,6 +8,11 @@ class Users {
     }
 
     public function createUser($email, $username, $password, $confirmPassword) {
+        $email = htmlspecialchars($email);
+        $username = htmlspecialchars($username);
+        $password = htmlspecialchars($password);
+        $confirmPassword = htmlspecialchars($confirmPassword);
+
         $conn = $this->db->getPDO();
         global $trad;
 
@@ -45,6 +50,9 @@ class Users {
     }
 
     public function logUser($email, $password) {
+        $email = htmlspecialchars($email);
+        $password = htmlspecialchars($password);
+
         $conn = $this->db->getPDO();
         
         $query = $conn->prepare("SELECT `email`, `password`, `username` FROM users WHERE `email` = ? OR `username` = ?");

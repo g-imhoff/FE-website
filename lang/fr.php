@@ -8,9 +8,6 @@ $trad = [
         "Change" => "Change to English",
         "Account" => "Mon compte"
     ], 
-    "Main" => [
-        "Start" => "Commencer la leçon"
-    ], 
     "login" => [
         'email' => 'Email ou Nom d\'utilisateur',
         "user" => "Nom d'utilisateur",
